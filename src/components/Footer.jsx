@@ -2,7 +2,7 @@
 and potentially some other links.*/
 
 function Footer() {
-    return <footer>
+    return <footer id="footer">
         <p>&#169; 2025 Gad Cooper. All Rights Reserved.</p>
     </footer>
 }

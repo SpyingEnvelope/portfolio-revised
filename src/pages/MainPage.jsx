@@ -10,6 +10,7 @@ and pages will be displayed here.*/
 function MainPage() {
 
     return <>
+    <div className="h-10" id="home"></div>
         <Navigation />
         <main>
             <IndexPage />
