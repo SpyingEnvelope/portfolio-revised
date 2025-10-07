@@ -15,6 +15,10 @@ html, body {
   line-height: 1.8;
 }
 
+.glow {
+  box-shadow: 0 0 100px 5px white;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
