@@ -40,7 +40,7 @@ function Navigation() {
   return (
     <header>
       <nav
-        className={`fixed top-0 left-0  ${bgColor} w-full flex justify-start h-15 items-center`}
+        className={`fixed top-0 left-0  ${bgColor} w-full flex justify-start h-15 items-center z-30`}
       >
         <NavigationMenu>
           <NavigationMenuList>

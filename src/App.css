@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-html {
+html, body {
   scroll-behavior: smooth;
 }
 
@@ -12,6 +12,7 @@ html {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  line-height: 1.8;
 }
 
 .logo {
@@ -48,6 +49,10 @@ html {
 
 .read-the-docs {
   color: #888;
+}
+
+.trapezoid {
+  clip-path: polygon(52% 1%, 55% 0, 100% 100%, 0% 100%);
 }
 
 @theme inline {
