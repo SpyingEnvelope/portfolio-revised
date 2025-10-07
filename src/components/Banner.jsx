@@ -2,6 +2,8 @@
 
 /* PROPS: None */
 
+import SlidingInfo from "./SlidingInfo";
+
 function Banner() {
   return (
     <>
@@ -11,7 +13,7 @@ function Banner() {
       {/* <div className="absolute left-3/6 rotate-40 top-0 trapezoid bg-linear-to-r from-slate-950 from-10% via-stone-600 via-30% to-slate-950 to-90% opacity-20 h-50 w-50" /> */}
       {/* <div className="absolute left-3/8 rotate-310 top-0 trapezoid bg-linear-to-r from-slate-950 from-10% via-stone-600 via-30% to-slate-950 to-90% opacity-20 h-50 w-50"/> */}
       {/* <div className="absolute left-4/9 rotate-359 top-0 trapezoid bg-linear-to-r from-slate-950 from-10% via-stone-600 via-30% to-slate-950 to-90% opacity-20 h-50 w-50"/> */}
-      <div className="relative w-full h-80 overflow-hidden flex items-center justify-center z-20 border-1 mb-10">
+      <div className="relative w-full h-80 overflow-visible flex items-center justify-center z-20 mb-10">
         {/* Circle */}
         <div className="flex items-center justify-center absolute shadow-2xl shadow-white rounded-full glow">
           <div className="w-40 h-40 rounded-full bg-gray-400 shadow-lg shadow-black/40 flex items-center justify-center">
@@ -31,6 +33,7 @@ function Banner() {
           </div>
         </div>
       </div>
+      <SlidingInfo />
     </>
   );
 }
