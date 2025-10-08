@@ -1,7 +1,7 @@
 /* This component is where the main navigation will be stored. It should be easily accessible, and it
 should include links to the home section, about me section, projects, and the contact me page.*/
 
-// State will be used to deal with the visibility of the navigation bar
+// State will be used to deal with the visibility of the navigation bar and logo
 import { useState } from "react";
 
 // shadcn navigation menu imports
@@ -52,8 +52,10 @@ function Navigation() {
   and set w-screen for the logo div to return to the previous settings */
   return (
     <header>
+      {/*The div below is just for creating the blurry background to the navigation bar */}
+      <div className={`fixed top-0 left-0 w-screen z-30 h-15 ${bgColor}`} />
       <nav
-        className={`fixed top-0 left-0 xl:left-auto ${bgColor} w-full flex justify-start h-15 items-center z-30 max-w-[1220px]`}
+        className={`fixed top-0 left-0 xl:left-auto w-full flex justify-start h-15 items-center z-31 max-w-[1220px]`}
       >
         <div className={`flex justify-end flex-row w-full absolute right-5 ${logoVisibility}`}>
           <a href="#top">
