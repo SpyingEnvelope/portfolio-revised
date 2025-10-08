@@ -4,8 +4,8 @@
 
 import { motion } from "motion/react";
 
-const trapScaleStart = 0.9;
-const trapScaleEnd = 1;
+const trapScaleStart = 1;
+const trapScaleEnd = 1.1;
 
 function Banner() {
   return (
