@@ -2,7 +2,10 @@
 
 /* PROPS: None */
 
-import SlidingInfo from "./SlidingInfo";
+import { motion } from "motion/react";
+
+const trapScaleStart = 0.9;
+const trapScaleEnd = 1;
 
 function Banner() {
   return (
@@ -15,23 +18,127 @@ function Banner() {
       {/* <div className="absolute left-4/9 rotate-359 top-0 trapezoid bg-linear-to-r from-slate-950 from-10% via-stone-600 via-30% to-slate-950 to-90% opacity-20 h-50 w-50"/> */}
       <div className="relative w-full h-80 overflow-visible flex items-center justify-center z-20 mb-10">
         {/* Circle */}
-        <div className="flex items-center justify-center absolute shadow-2xl shadow-white rounded-full glow">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{duration: 1}}
+          className="flex items-center justify-center absolute shadow-2xl shadow-white rounded-full glow"
+        >
           <div className="w-40 h-40 rounded-full bg-gray-400 shadow-lg shadow-black/40 flex items-center justify-center">
-            <div className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-130 absolute z-[-1] opacity-20" />
-            <div className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-320 absolute z-[-1] opacity-20 " />
-            <div className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-50 absolute z-[-1] opacity-20 scale-[1.1]" />
-            <div className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-240 absolute z-[-1] opacity-20 scale-[0.88]" />
-            <div className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-90 absolute z-[-1] opacity-20 scale-[0.9]" />
-            <div className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-280 absolute z-[-1] opacity-20 scale-[1.1]" />
-            <div
+            <motion.div
+              className="absolute w-10 h-70 z-[-1]"
+              initial={{ scale: 1 }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            >
+              <motion.div
+                className="absolute w-10 h-70"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 1, duration: 1 }}
+              >
+                <motion.div
+                  initial={{ scale: 1 }}
+                  animate={{ scale: [trapScaleStart, trapScaleEnd] }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 2,
+                    ease: "linear",
+                  }}
+                  className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-0 absolute z-[-1] opacity-20"
+                />
+                <motion.div
+                  initial={{ scale: 1 }}
+                  animate={{ scale: [trapScaleStart, trapScaleEnd] }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 2,
+                    ease: "linear",
+                  }}
+                  className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-45 absolute z-[-1] opacity-20 "
+                />
+                <motion.div
+                  initial={{ scale: 1 }}
+                  animate={{ scale: [trapScaleStart, trapScaleEnd] }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 2,
+                    ease: "linear",
+                  }}
+                  className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-90 absolute z-[-1] opacity-20"
+                />
+                <motion.div
+                  initial={{ scale: 1 }}
+                  animate={{ scale: [trapScaleStart, trapScaleEnd] }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 2,
+                    ease: "linear",
+                  }}
+                  className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-135 absolute z-[-1] opacity-20"
+                />
+                <motion.div
+                  initial={{ scale: 1 }}
+                  animate={{ scale: [trapScaleStart, trapScaleEnd] }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 2,
+                    ease: "linear",
+                  }}
+                  className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-180 absolute z-[-1] opacity-20"
+                />
+                <motion.div
+                  initial={{ scale: 1 }}
+                  animate={{ scale: [trapScaleStart, trapScaleEnd] }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 2,
+                    ease: "linear",
+                  }}
+                  className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-225 absolute z-[-1] opacity-20"
+                />
+                <motion.div
+                  initial={{ scale: 1 }}
+                  animate={{ scale: [trapScaleStart, trapScaleEnd] }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 2,
+                    ease: "linear",
+                  }}
+                  className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-270 absolute z-[-1] opacity-20"
+                />
+                <motion.div
+                  initial={{ scale: 1 }}
+                  animate={{ scale: [trapScaleStart, trapScaleEnd] }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 2,
+                    ease: "linear",
+                  }}
+                  className="trapezoid bg-linear-to-tr from-slate-800 from-30% via-stone-600 via-50% to-slate-950 to-50% w-10 h-70 rotate-315 absolute z-[-1] opacity-20"
+                />
+              </motion.div>
+            </motion.div>
+            <motion.div
               className="w-32 h-32 rounded-full z-20"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1 }}
               style={{
                 background:
                   "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.08) 12%, rgba(255,255,255,0.02) 25%, rgba(0,0,0,0.06) 70%)",
               }}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );

@@ -58,7 +58,7 @@ function SlidingInfo() {
   return (
     <Marquee>
       <ul className="flex flex-row text-xl">
-          {devArr.map((devObj) => <li className="m-4 flex flex-col justify-center items-center">{devObj.icon}{devObj.name}</li>)}
+          {devArr.map((devObj) => <li key={devObj.name} className="m-4 flex flex-col justify-center items-center">{devObj.icon}{devObj.name}</li>)}
       </ul>
     </Marquee>
   );
