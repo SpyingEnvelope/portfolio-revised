@@ -1,3 +1,6 @@
+/*This is the component that displays the sliding marquee. It uses devicons to display icons.
+NOTE: Each icon is imported on their own line as per the recommendations of Devicon docs. */
+
 import Marquee from "react-fast-marquee";
 import PythonOriginal from "devicons-react/icons/PythonOriginal";
 import { JavascriptOriginal } from "devicons-react";
@@ -20,9 +23,10 @@ import { TailwindcssOriginal } from "devicons-react";
 import { TensorflowOriginal } from "devicons-react";
 import { NodejsOriginal } from "devicons-react";
 
-
+// A constant to set the size of the icons
 const iconSize = "2.5em";
 
+// An object array that stores the text and icons to be displayed by the marquee
 const devArr = [
     {name: "JavaScript", icon: <JavascriptOriginal size={iconSize}/>},
     {name: "Java", icon: <JavaOriginal size={iconSize} />},
@@ -46,6 +50,10 @@ const devArr = [
     {name: "NumPy", icon: <NumpyOriginal size={iconSize} />},
 ]
 
+/*The component uses the Marquee component provided by Fast React Marquee. Into the marquee,
+a list is passed for easy management of icons displayed. */
+
+/* PROPS: None */
 function SlidingInfo() {
   return (
     <Marquee>
