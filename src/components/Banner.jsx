@@ -33,7 +33,6 @@ function Banner() {
           </div>
         </div>
       </div>
-      <SlidingInfo />
     </>
   );
 }

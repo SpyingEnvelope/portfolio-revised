@@ -4,6 +4,7 @@ import About from "./About";
 import Footer from "../components/Footer";
 import Projects from "./Projects";
 import Banner from "@/components/Banner";
+import Header from "@/components/Header";
 
 /* This is the main page that will always be displayed on the screen. As such, all crucial components
 and pages will be displayed here.*/
@@ -14,7 +15,7 @@ function MainPage() {
     <div className="h-10" id="home"></div>
         <Navigation />
         <main>
-            <Banner />
+            <Header />
             <IndexPage />
             <About />
             <Projects />
