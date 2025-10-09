@@ -1,6 +1,5 @@
 /*This is the component that displays the sliding marquee. It uses devicons to display icons.
 NOTE: Each icon is imported on their own line as per the recommendations of Devicon docs. */
-
 import Marquee from "react-fast-marquee";
 import PythonOriginal from "devicons-react/icons/PythonOriginal";
 import { JavascriptOriginal } from "devicons-react";
@@ -56,7 +55,7 @@ a list is passed for easy management of icons displayed. */
 /* PROPS: None */
 function SlidingInfo() {
   return (
-    <Marquee>
+<Marquee>
       <ul className="flex flex-row text-xl">
           {devArr.map((devObj) => <li key={devObj.name} className="m-4 flex flex-col justify-center items-center">{devObj.icon}{devObj.name}</li>)}
       </ul>

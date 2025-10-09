@@ -6,7 +6,7 @@ function IndexPage() {
   return (
     // id home would be used for navigation purpose with the anchor HTML attribute
     <div className="z-20 relative">
-      <h1 className="text-5xl">This is the index page</h1>
+      <h2 className="text-xl md:text-3xl lg:text-4xl">Hey, I'm <span className="text-amber-500">Gad Cooper</span>, and <strong className="text-lime-600">These</strong> are some of the techs I worked with</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas
         mattis purus et ullamcorper. Nam vel posuere quam. Proin pretium non
