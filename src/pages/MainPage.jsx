@@ -10,18 +10,19 @@ import Header from "@/components/Header";
 and pages will be displayed here.*/
 
 function MainPage() {
-
-    return <>
-    <div className="h-10" id="home"></div>
-        <Navigation />
-        <main>
-            <Header />
-            <IndexPage />
-            <About />
-            <Projects />
-        </main>
-        <Footer />
+  return (
+    <>
+      <div className="h-10" id="home" />
+      <Navigation />
+      <main>
+        <Header />
+        <IndexPage />
+        <About />
+        <Projects />
+      </main>
+      <Footer />
     </>
+  );
 }
 
 export default MainPage;

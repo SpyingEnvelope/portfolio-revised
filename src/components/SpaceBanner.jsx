@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import BackgroundType from "./BackgroundType";
+import StarryBackground from "./StarryBackground";
 
 import profile from "/profile.jpg";
 
@@ -7,7 +8,7 @@ const trapScaleStart = 1;
 const trapScaleEnd = 1.1;
 const delayStart = 0.3;
 
-function NewBanner() {
+function SpaceBanner() {
   return (
     <>
       {/* These comments are here to experiment with a spotlight effect. They currently do not work and are WIP. */}
@@ -17,8 +18,8 @@ function NewBanner() {
       {/* <div className="absolute left-3/8 rotate-310 top-0 trapezoid bg-linear-to-r from-slate-950 from-10% via-stone-600 via-30% to-slate-950 to-90% opacity-20 h-50 w-50"/> */}
       {/* <div className="absolute left-4/9 rotate-359 top-0 trapezoid bg-linear-to-r from-slate-950 from-10% via-stone-600 via-30% to-slate-950 to-90% opacity-20 h-50 w-50"/> */}
       <div className="relative w-full h-80 overflow-visible flex items-center justify-center z-20 mb-10">
-        <BackgroundType />
         {/* outer white circle div. The glow class creates the glowing effect */}
+        <StarryBackground />
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,4 +49,4 @@ function NewBanner() {
   );
 }
 
-export default NewBanner;
+export default SpaceBanner;
