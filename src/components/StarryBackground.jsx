@@ -1,6 +1,10 @@
+/* This component generates the backgroudn stars seen in the banner .*/
+
 import { motion } from "motion/react";
 import Star from "./Star";
 
+/* This function generates a specific number of star coordinates, stores them in a 2D array, and returns the array. It also generates a delay to be used for staggering when
+the stars twinkle and the index to be used for the key prop.*/
 function starCoordinates() {
   const coordArr = [];
   const delayStart = 0.5;
@@ -17,6 +21,9 @@ function starCoordinates() {
   return coordArr;
 }
 
+
+/* Returns the stary bacgkround JSX code 
+PROPS: None*/ 
 function StarryBackground() {
   const coordArr = starCoordinates();
 

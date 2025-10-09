@@ -1,5 +1,12 @@
+/* This component generates individual stars with their own twinkling animation using Motion for React */
+
 import { motion } from "motion/react";
 
+/* Returns a star with a twinkling animation.
+PROPS: 
+x: the percentage left offset used for each star
+y: the percentage top offset used for each star 
+delay: how long to wait before starting the twinkling animation for a star */
 function Star({ x, y, delay }) {
   return (
     <motion.div
