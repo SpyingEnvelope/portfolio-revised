@@ -7,7 +7,6 @@ html, body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   background: rgba(2, 6, 24, 1);
-  /* background: linear-gradient(0deg, rgba(2, 6, 24, 1) 95%, rgba(7, 27, 43, 1) 100%); */
 }
 
 body {
