@@ -2,7 +2,7 @@
 should include links to the home section, about me section, projects, and the contact me page.*/
 
 // State will be used to deal with the visibility of the navigation bar and logo
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // shadcn navigation menu imports
 import {
@@ -19,6 +19,13 @@ function Navigation() {
   // Visibility state for dealing for the background color of the menu
   const [navBarVisibility, setNavBarVisibility] = useState(true);
   const [logoVisibility, setLogoVisibility] = useState("visible");
+
+  // UseEffect is used here to make the logo invisible if the screen is already 360px wide
+  useEffect(() => {
+    if (window.innerWidth <= 360) {
+      setLogoVisibility("invisible");
+    }
+  }, [])
 
   /* The bgColor variable only has a background color if
   navBarVisibility is false*/
