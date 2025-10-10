@@ -10,8 +10,11 @@ import { PiStudentFill } from "react-icons/pi";
 import { MdWork } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa6";
 
+const orangeBorder = `rgba(254 154 0 1)`;
+
 /* PROPS: None */
 function SpaceBanner() {
+
   return (
     <>
       {/* These comments are here to experiment with a spotlight effect. They currently do not work and are WIP. */}
@@ -23,7 +26,7 @@ function SpaceBanner() {
       <motion.div
         variants={{ hovering: { opacity: 1 }, idle: { opacity: 1 } }}
         initial="idle"
-        whileHover="hovering"
+        whileHover={"hovering"}
         className="relative w-full h-80 md:h-115 overflow-visible flex items-center justify-center z-20 mb-10"
       >
         {/* The StarryBackground component generates the background stars. */}
@@ -69,7 +72,7 @@ function SpaceBanner() {
             para={
               "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Tailwind."
             }
-            motionLeft={280}
+            motionLeft={270}
             motionTop={80}
           >
             <PiDevToLogoDuotone className="text-3xl" />
@@ -95,7 +98,7 @@ function SpaceBanner() {
             para={
               "Full-stack developer with experience developing applications in Node.js, Express, SQL, and MongoDB."
             }
-            motionLeft={80}
+            motionLeft={90}
           >
             <FaLaptopCode className="text-3xl" />
           </ModifiedCard>
@@ -115,7 +118,7 @@ function SpaceBanner() {
         <motion.div
           variants={{
             idle: { opacity: 0, scale: 1, y: -30 },
-            hovering: { opacity: 0.8, scale: 0.9 },
+            hovering: { opacity: 1, scale: 1 },
           }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "linear" }}
