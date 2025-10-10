@@ -20,10 +20,15 @@ function SpaceBanner() {
       {/* <div className="absolute left-3/6 rotate-40 top-0 trapezoid bg-linear-to-r from-slate-950 from-10% via-stone-600 via-30% to-slate-950 to-90% opacity-20 h-50 w-50" /> */}
       {/* <div className="absolute left-3/8 rotate-310 top-0 trapezoid bg-linear-to-r from-slate-950 from-10% via-stone-600 via-30% to-slate-950 to-90% opacity-20 h-50 w-50"/> */}
       {/* <div className="absolute left-4/9 rotate-359 top-0 trapezoid bg-linear-to-r from-slate-950 from-10% via-stone-600 via-30% to-slate-950 to-90% opacity-20 h-50 w-50"/> */}
-      <div className="relative w-full h-80 md:h-115 overflow-visible flex items-center justify-center z-20 mb-10">
+      <motion.div
+        variants={{ hovering: { opacity: 1 }, idle: { opacity: 1 } }}
+        initial="idle"
+        whileHover="hovering"
+        className="relative w-full h-80 md:h-115 overflow-visible flex items-center justify-center z-20 mb-10"
+      >
         {/* The StarryBackground component generates the background stars. */}
         <StarryBackground />
-        <div className="md:flex flex-row justify-between w-full hidden z-25">
+        <motion.div className="md:flex flex-row justify-between w-full hidden z-25">
           <ModifiedCard
             top={100}
             left={200}
@@ -31,7 +36,11 @@ function SpaceBanner() {
             para={
               "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Tailwind."
             }
-          ><PiDevToLogoDuotone className="text-3xl" /></ModifiedCard>
+            motionLeft={300}
+            motionTop={80}
+          >
+            <PiDevToLogoDuotone className="text-3xl" />
+          </ModifiedCard>
           <ModifiedCard
             top={-120}
             left={-200}
@@ -39,8 +48,11 @@ function SpaceBanner() {
             para={
               "Bachelor of Science in Computer Science program graduate with highest honours."
             }
-          ><PiStudentFill className="text-3xl"/></ModifiedCard>
-        </div>
+            motionLeft={-120}
+          >
+            <PiStudentFill className="text-3xl" />
+          </ModifiedCard>
+        </motion.div>
         <div className="xl:flex flex-row justify-between w-full hidden z-25">
           <ModifiedCard
             top={80}
@@ -50,7 +62,9 @@ function SpaceBanner() {
               "Full-stack developer with experience developing applications in Node.js, Express, SQL, and MongoDB."
             }
             motionLeft={30}
-          ><FaLaptopCode className="text-3xl" /></ModifiedCard>
+          >
+            <FaLaptopCode className="text-3xl" />
+          </ModifiedCard>
           <ModifiedCard
             top={-140}
             left={-120}
@@ -58,12 +72,19 @@ function SpaceBanner() {
               "Passionate about computer science and programming. Created multiple applications to assist company operations."
             }
             head={"Dedication"}
-          ><MdWork className="text-3xl" /></ModifiedCard>
+            motionLeft={-250}
+            motionTop={-120}
+          >
+            <MdWork className="text-3xl" />
+          </ModifiedCard>
         </div>
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          variants={{
+            idle: { opacity: 0, scale: 1, y: -30 },
+            hovering: { opacity: 0.8, scale: 0.9 },
+          }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5, ease: "linear" }}
           className="flex items-center justify-center absolute rounded-full"
         >
           {/* This div is used to contain all of the lines going around the middle circle. It was created as I needed 
@@ -84,7 +105,7 @@ function SpaceBanner() {
             </motion.div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </>
   );
 }

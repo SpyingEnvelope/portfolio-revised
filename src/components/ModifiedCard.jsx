@@ -23,9 +23,12 @@ function ModifiedCard({
 }) {
   return (
     <motion.div
-      className="relative flex flex-col w-90 h-45 bg-[#171B3B] rounded-xl shadow-md/40 shadow-[#FE9A00]"
-      initial={{ x: left, y: top }}
-      whileHover={{ x: motionLeft, y: motionTop }}
+      className="relative flex flex-col w-90 h-45 bg-[#171B3B] rounded-xl"
+      variants={{
+        idle: { x: left, y: top, opacity: 0 },
+        hovering: { x: motionLeft, y: motionTop, boxShadow: "0px 4px 5px -2px #FE9A00" },
+      }}
+      animate={{opacity: 1, transition: {delay: 0.8, duration: 0.5}}}
       transition={{ duration: 0.3, ease: "linear" }}
     >
       <div className="flex flex-row space-x-3 ml-3 mt-5 mb-3">
