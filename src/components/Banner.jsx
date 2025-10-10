@@ -1,4 +1,6 @@
-/* This is the main banner component. It displays the glowing circle with the profile image.*/
+/* THIS COMPONENT IS NO LONGER IN USE. IT IS BEING KEPT HERE FOR REVISION PURPOSES 
+
+This banner displays a glowing circle with the profile image.*/
 
 /* PROPS: None */
 
