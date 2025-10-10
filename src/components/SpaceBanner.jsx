@@ -33,7 +33,7 @@ function SpaceBanner() {
             left={0}
             head={"Expertise"}
             para={
-              "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Tailwind."
+              "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Express."
             }
             motionLeft={-25}
             motionTop={140}
@@ -61,9 +61,9 @@ function SpaceBanner() {
           <ModifiedCard
             top={130}
             left={0}
-            head={"Expertise"}
+            head={"Full-stack"}
             para={
-              "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Tailwind."
+              "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React, Tailwind, and Express."
             }
             motionLeft={-25}
             motionTop={0}
