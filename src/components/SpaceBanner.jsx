@@ -88,7 +88,7 @@ function SpaceBanner() {
           <ModifiedCard
             top={100}
             left={200}
-            head={"Expertise"}
+            head={"Frontend"}
             para={
               "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Tailwind."
             }
@@ -114,9 +114,9 @@ function SpaceBanner() {
           <ModifiedCard
             top={80}
             left={150}
-            head={"Full-stack"}
+            head={"Backend"}
             para={
-              "Full-stack developer with experience developing applications in Node.js, Express, SQL, and MongoDB."
+              "Backend expertise in various technologies, with experience developing applications in Node.js, Express, SQL, and MongoDB."
             }
             motionLeft={90}
           >
