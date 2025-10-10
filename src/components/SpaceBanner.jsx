@@ -116,10 +116,7 @@ function SpaceBanner() {
           </ModifiedCard>
         </div>
         <motion.div
-          variants={{
-            idle: { opacity: 0, scale: 1, y: -30 },
-            hovering: { opacity: 1, scale: 1 },
-          }}
+          initial={{ opacity: 0, scale: 1, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "linear" }}
           className="flex items-center justify-center absolute rounded-full"
