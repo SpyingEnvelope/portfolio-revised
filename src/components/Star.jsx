@@ -12,8 +12,8 @@ function Star({ x, y, delay }) {
     <motion.div
       className={`absolute text-white w-1 h-1 aspect-square rounded-full scale-10`}
       style={{ top: y, left: x }}
-      initial={{ opacity: 0.5, scale: 1 }}
-      animate={{ opacity: 1, scale: 1.25 }}
+      initial={{ opacity: 0.3 }}
+      animate={{ opacity: 1 }}
       transition={{
         repeat: Infinity,
         duration: 0.5,
