@@ -22,7 +22,7 @@ body {
 }
 
 .glow {
-  box-shadow: 0 0 100px 5px white;
+  box-shadow: 0 0 10px 1px black;
   overflow: visible;
 }
 

@@ -28,7 +28,40 @@ function SpaceBanner() {
       >
         {/* The StarryBackground component generates the background stars. */}
         <StarryBackground />
-        <motion.div className="md:flex flex-row justify-between w-full hidden z-25">
+        {/* This div shows the modified cards for medium to large */}
+        <motion.div
+          variants={{ idle: { zIndex: 1 }, hovering: { zIndex: 31 } }}
+          className=" md:flex xl:hidden flex-row justify-between w-full hidden"
+        >
+          <ModifiedCard
+            top={130}
+            left={0}
+            head={"Expertise"}
+            para={
+              "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Tailwind."
+            }
+            motionLeft={-25}
+            motionTop={0}
+            zValue={{ start: 1, while: 30 }}
+          >
+            <PiDevToLogoDuotone className="text-3xl" />
+          </ModifiedCard>
+          <ModifiedCard
+            top={-120}
+            left={0}
+            head={"Education"}
+            para={
+              "Bachelor of Science in Computer Science program graduate with highest honours."
+            }
+            motionLeft={25}
+            motionTop={0}
+            zValue={{ start: 1, while: 30 }}
+          >
+            <PiStudentFill className="text-3xl" />
+          </ModifiedCard>
+        </motion.div>
+        {/* This div only shows up on extra large screens, like desktops or laptops*/}
+        <motion.div className="xl:flex flex-row justify-between w-full hidden z-25">
           <ModifiedCard
             top={100}
             left={200}
@@ -36,7 +69,7 @@ function SpaceBanner() {
             para={
               "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Tailwind."
             }
-            motionLeft={300}
+            motionLeft={280}
             motionTop={80}
           >
             <PiDevToLogoDuotone className="text-3xl" />
@@ -53,6 +86,7 @@ function SpaceBanner() {
             <PiStudentFill className="text-3xl" />
           </ModifiedCard>
         </motion.div>
+        {/* This div also only shows up on extra large screens */}
         <div className="xl:flex flex-row justify-between w-full hidden z-25">
           <ModifiedCard
             top={80}
@@ -61,7 +95,7 @@ function SpaceBanner() {
             para={
               "Full-stack developer with experience developing applications in Node.js, Express, SQL, and MongoDB."
             }
-            motionLeft={30}
+            motionLeft={80}
           >
             <FaLaptopCode className="text-3xl" />
           </ModifiedCard>
@@ -87,17 +121,10 @@ function SpaceBanner() {
           transition={{ duration: 0.5, ease: "linear" }}
           className="flex items-center justify-center absolute rounded-full"
         >
-          {/* This div is used to contain all of the lines going around the middle circle. It was created as I needed 
-          two different durations, one for how fast the lines spin and one for how quickly the go up and down in scale*/}
-          <div className="w-40 h-40 rounded-full bg-gray-500 shadow-lg shadow-black/40 flex items-center justify-center">
+          {/* This div displays the outer circle */}
+          <div className="w-40 h-40 rounded-full bg-linear-to-tr from-[#020618] to-[#1C254D] md:shadow-[0_0_10px_1px] xl:shadow-lg shadow-black/40 flex items-center justify-center z-15">
             {/* This div showcases the middle circle*/}
-            <motion.div
-              className="w-35 h-35 rounded-full z-20"
-              style={{
-                background:
-                  "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.08) 12%, rgba(255,255,255,0.02) 25%, rgba(0,0,0,0.06) 70%)",
-              }}
-            >
+            <motion.div className="w-35 h-35 rounded-full z-20">
               <img
                 src={profile}
                 className="w-35 h-35 rounded-full aspect-square"
