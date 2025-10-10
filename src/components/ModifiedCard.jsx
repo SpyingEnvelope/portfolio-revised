@@ -17,15 +17,15 @@ for (let i = 0; i < 5; i++) {
 
 /* The render section of the component.
 PROPS: 
-image: The image to be used as an avatar if a child was not passed into the component
-fallback: a fallback description for the image used
-para: the text that appears in the body of the card
-head: the text that appears next to the image/icon 
-left: the left offset when the component initially renders
-top: the top offset when the component initially renders
-motionLeft: the left offset when the component is hovered over 
-motionTop: the top offset when the component is hovered over 
-children: The children passed into the component */
+image: STR The image file path for the image to be used as an avatar if a child was not passed into the component
+fallback: TEXT a fallback description for the image used
+para: TEXT the text that appears in the body of the card
+head: INT the text that appears next to the image/icon 
+left: INT the left offset when the component initially renders
+top: INT the top offset when the component initially renders
+motionLeft: INT the left offset when the component is hovered over 
+motionTop: INT the top offset when the component is hovered over 
+children: ICON COMPONENT The child passed into the component */
 function ModifiedCard({
   image,
   fallback,
