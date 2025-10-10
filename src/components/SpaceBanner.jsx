@@ -14,7 +14,6 @@ const orangeBorder = `rgba(254 154 0 1)`;
 
 /* PROPS: None */
 function SpaceBanner() {
-
   return (
     <>
       {/* These comments are here to experiment with a spotlight effect. They currently do not work and are WIP. */}
@@ -31,10 +30,39 @@ function SpaceBanner() {
       >
         {/* The StarryBackground component generates the background stars. */}
         <StarryBackground />
-        {/* This div shows the modified cards for medium to large */}
+        {/* This div displays on medium screens */}
         <motion.div
-          variants={{ idle: { zIndex: 1 }, hovering: { zIndex: 31 } }}
-          className=" md:flex xl:hidden flex-row justify-between w-full hidden"
+          className=" md:flex lg:hidden flex-row justify-between w-full hidden"
+        >
+          <ModifiedCard
+            top={140}
+            left={0}
+            head={"Expertise"}
+            para={
+              "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Tailwind."
+            }
+            motionLeft={-25}
+            motionTop={140}
+          >
+            <PiDevToLogoDuotone className="text-3xl" />
+          </ModifiedCard>
+          <ModifiedCard
+            top={-140}
+            left={0}
+            head={"Education"}
+            para={
+              "Bachelor of Science in Computer Science program graduate with highest honours."
+            }
+            motionLeft={20}
+            motionTop={-140}
+          >
+            <PiStudentFill className="text-3xl" />
+          </ModifiedCard>
+        </motion.div>
+        {/* This div shows the modified cards for large screens */}
+        <motion.div
+          variants={{ idle: { zIndex: 1 }, hovering: { zIndex: 21 } }}
+          className=" lg:flex xl:hidden flex-row justify-between w-full hidden"
         >
           <ModifiedCard
             top={130}
@@ -45,7 +73,6 @@ function SpaceBanner() {
             }
             motionLeft={-25}
             motionTop={0}
-            zValue={{ start: 1, while: 30 }}
           >
             <PiDevToLogoDuotone className="text-3xl" />
           </ModifiedCard>
@@ -58,7 +85,6 @@ function SpaceBanner() {
             }
             motionLeft={25}
             motionTop={0}
-            zValue={{ start: 1, while: 30 }}
           >
             <PiStudentFill className="text-3xl" />
           </ModifiedCard>
