@@ -12,8 +12,8 @@ function FadeInHeaderText() {
       className="text-xl md:text-3xl lg:text-4xl relative -top-10 md:-top-8"
     >
       Hey, I'm <span className="text-amber-500">Gad Cooper</span> and{" "}
-      <strong className="text-lime-600">These</strong> are the techs I have
-      worked with
+      <strong className="text-lime-600">these</strong> are the techs I have
+      experience with
     </motion.h2>
   );
 }

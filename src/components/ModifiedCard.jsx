@@ -1,14 +1,31 @@
+/* This component displays the cards shown around the profile picture in the banner. It uses
+React Icons to display a profile image, similar to those found in tweets. Alternatively,
+it can also take an image instead, which would be displayed with ShadCN's Avatar component. */
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { MdVerified } from "react-icons/md";
 import { IoMdStar } from "react-icons/io";
 import { motion } from "motion/react";
 
+// The array used to store stars
 const ratingStarArray = [];
 
+// The for loop used to generate the stars
 for (let i = 0; i < 5; i++) {
   ratingStarArray.push(<IoMdStar className="text-blue-400" key={i + "star"} />);
 }
 
+/* The render section of the component.
+PROPS: 
+image: The image to be used as an avatar if a child was not passed into the component
+fallback: a fallback description for the image used
+para: the text that appears in the body of the card
+head: the text that appears next to the image/icon 
+left: the left offset when the component initially renders
+top: the top offset when the component initially renders
+motionLeft: the left offset when the component is hovered over 
+motionTop: the top offset when the component is hovered over 
+children: The children passed into the component */
 function ModifiedCard({
   image,
   fallback,
