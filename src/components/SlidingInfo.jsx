@@ -55,7 +55,7 @@ a list is passed for easy management of icons displayed. */
 /* PROPS: None */
 function SlidingInfo() {
   return (
-<Marquee>
+<Marquee pauseOnHover={true} pauseOnClick={true}>
       <ul className="flex flex-row text-sm md:text-lg">
           {devArr.map((devObj) => <li key={devObj.name} className="m-4 flex flex-col justify-center items-center">{devObj.icon}{devObj.name}</li>)}
       </ul>

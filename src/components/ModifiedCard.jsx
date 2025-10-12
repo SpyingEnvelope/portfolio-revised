@@ -18,14 +18,20 @@ for (let i = 0; i < 5; i++) {
 /* The render section of the component.
 PROPS: 
 image: STR The image file path for the image to be used as an avatar if a child was not passed into the component
-fallback: TEXT a fallback description for the image used
-para: TEXT the text that appears in the body of the card
+fallback: STR a fallback description for the image used
+para: STR the text that appears in the body of the card
 head: INT the text that appears next to the image/icon 
 left: INT the left offset when the component initially renders
 top: INT the top offset when the component initially renders
 motionLeft: INT the left offset when the component is hovered over 
 motionTop: INT the top offset when the component is hovered over 
-children: ICON COMPONENT The child passed into the component */
+tap: OBJECT the framer motion object used to animate when the card is tapped
+shadow: STR a box shadow string used to set the boxShadow property when the hovering state is triggered
+        default value is "0px 4px 5px -2px #FE9A00"
+topEntry: INT the top offset to be used when the component first appears in the DOM
+leftEntry: INT the left offset to be used when the component first appears in the DOM
+animateDelay: INT how much to delay the animation. Default value is 0.8
+children: REACTNODE ICON COMPONENT The child passed into the component */
 function ModifiedCard({
   image,
   fallback,
@@ -35,6 +41,11 @@ function ModifiedCard({
   top,
   motionLeft,
   motionTop,
+  tap,
+  shadow,
+  topEntry,
+  leftEntry,
+  animateDelay,
   children,
 }) {
   return (
@@ -45,11 +56,21 @@ function ModifiedCard({
         hovering: {
           x: motionLeft,
           y: motionTop,
-          boxShadow: "0px 4px 5px -2px #FE9A00",
+          boxShadow: shadow ?? "0px 4px 5px -2px #FE9A00",
         },
       }}
-      initial={{ x: left, y: top, opacity: 0 }}
-      animate={{ opacity: 1, transition: { delay: 0.8, duration: 0.5 } }}
+      initial={{
+        x: leftEntry ?? left,
+        y: topEntry ?? top,
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+        x: leftEntry ? left : undefined,
+        y: topEntry ? top : undefined,
+        transition: { delay: animateDelay ?? 0.8, duration: 0.5 },
+      }}
+      whileTap={tap}
       transition={{ duration: 0.3, ease: "linear" }}
     >
       <div className="flex flex-row space-x-3 ml-3 mt-5 mb-3">
