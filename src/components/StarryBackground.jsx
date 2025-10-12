@@ -28,7 +28,7 @@ function StarryBackground() {
   const coordArr = starCoordinates();
 
   return (
-    <motion.div className="w-screen h-full flex flex-col absolute">
+    <motion.div className="w-screen left-0 h-180 md:h-115 flex flex-col absolute">
       {coordArr.map((coords) => (
         <Star x={coords[0]} y={coords[1]} key={coords[2]} delay={coords[3]} />
       ))}

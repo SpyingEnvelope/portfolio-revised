@@ -43,14 +43,14 @@ const cardInfoObj = {
 function SpaceBanner() {
   return (
     <>
+      {/* The StarryBackground component generates the background stars. */}
+      <StarryBackground />
       <motion.div
         variants={{ hovering: { opacity: 1 }, idle: { opacity: 1 } }}
         initial="idle"
         whileHover={"hovering"}
         className="relative w-full h-180 md:h-115 overflow-visible flex md:items-center justify-center z-20 mb-10"
       >
-        {/* The StarryBackground component generates the background stars. */}
-        <StarryBackground />
         {/* This div displays on medium screens */}
         <motion.div className=" md:flex lg:hidden flex-row justify-between w-full hidden">
           <ModifiedCard
@@ -174,7 +174,10 @@ function SpaceBanner() {
             shadow={"0px"}
             topEntry={-20}
             animateDelay={0.5}
-            tap={{ boxShadow: "0px 4px 5px -2px #FE9A00", transition: { duration: 0.2 } }}
+            tap={{
+              boxShadow: "0px 4px 5px -2px #FE9A00",
+              transition: { duration: 0.2 },
+            }}
           >
             {cardInfoObj.edu.icon}
           </ModifiedCard>
@@ -188,7 +191,10 @@ function SpaceBanner() {
             topEntry={-20}
             animateDelay={0.65}
             shadow={"0px"}
-            tap={{ boxShadow: "0px 4px 5px -2px #FE9A00", transition: { duration: 0.2 }}}
+            tap={{
+              boxShadow: "0px 4px 5px -2px #FE9A00",
+              transition: { duration: 0.2 },
+            }}
           >
             {cardInfoObj.fullstack.icon}
           </ModifiedCard>
