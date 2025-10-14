@@ -1,50 +1,61 @@
+import ProjectCard from "@/components/ProjectCard";
+
 function Projects() {
   return (
-    <div id="projects">
-      <h1 className="text-5xl">This is the projects section</h1>
-      <p>
+    <div
+      id="projects"
+      className="flex flex-col justify-center items-center mt-30"
+    >
+      <h2 className="text-xl bold-instrument-sans text-[#3698D5] tracking-widest">
+        PROJECTS
+      </h2>
+      <h3 className="bold-instrument-sans text-4xl tracking-widest">
+        CREATING SOFTWARE <br /> THAT BRINGS VISIONS TO LIFE
+      </h3>
+      <p className="reg-instrument-sans xl:w-[900px] mt-5 mb-15">
         {" "}
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas
-        mattis purus et ullamcorper. Nam vel posuere quam. Proin pretium non
-        eros sodales malesuada. Quisque consequat mauris in gravida placerat.
-        Mauris porta sed magna eu elementum. Class aptent taciti sociosqu ad
-        litora torquent per conubia nostra, per inceptos himenaeos. Quisque sit
-        amet tellus scelerisque, sagittis mauris ac, consequat turpis. Ut ut
-        sapien eu sem pellentesque blandit sed sit amet erat. Nullam eu ligula
-        lectus. Nunc condimentum risus sit amet nisi placerat vehicula. Ut vitae
-        sapien dui. Aliquam sapien erat, hendrerit sed iaculis a, ornare id
-        nibh. In quis erat non ante aliquet venenatis at sed ex. Phasellus purus
-        diam, pretium at rutrum vel, dignissim a erat. Vestibulum interdum
-        aliquam mauris, quis laoreet leo varius vitae. Donec posuere a est sit
-        amet mollis. Duis ut ligula metus. Sed magna urna, condimentum rutrum
-        velit eget, volutpat varius magna. Sed non iaculis orci. Nulla eu lectus
-        ullamcorper, maximus tellus a, malesuada ex. Nam dolor enim, vestibulum
-        nec congue et, euismod mollis odio. Suspendisse potenti. Proin consequat
-        eleifend porttitor. Fusce gravida et enim ac fringilla. Donec lobortis
-        nisl at urna commodo, ut cursus nulla iaculis. Pellentesque nibh purus,
-        ornare ut nibh eu, pulvinar commodo ante. Sed ut vehicula metus, ut
-        convallis justo. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Vivamus vitae magna ac libero euismod luctus. Sed mauris
-        risus, laoreet non urna non, sollicitudin condimentum neque. Integer
-        condimentum venenatis leo. Aenean feugiat ex dolor, ac scelerisque orci
-        elementum nec. Mauris varius vehicula fringilla. Aliquam quis nunc eu
-        nibh pellentesque ornare. Cras tincidunt iaculis libero rhoncus euismod.
-        Vestibulum id augue in velit dapibus euismod nec non mi. Cras at dapibus
-        metus, sed fermentum erat. Phasellus congue ligula quam, sit amet
-        placerat justo malesuada ut. Quisque porttitor at est nec posuere.
-        Phasellus eget mauris sollicitudin, sodales nisl at, vestibulum risus.
-        Morbi bibendum quis lacus vel rutrum. Vivamus eu risus in nunc ultricies
-        ultricies at a lectus. Cras at sagittis tortor, ut auctor ipsum.
-        Curabitur ac nulla a ipsum vulputate vestibulum. Sed ullamcorper nisl
-        vel tristique pellentesque. Etiam ac dolor ac sem dignissim vestibulum.
-        Aliquam a suscipit mi, eu elementum justo. Vivamus sollicitudin arcu
-        vitae lectus euismod, quis viverra nisl pellentesque. Cras imperdiet est
-        ac interdum facilisis. Ut nec justo eleifend, iaculis tellus a, sodales
-        urna. Maecenas viverra ex purus, non interdum libero luctus eu.
-        Phasellus vulputate imperdiet lacus a tincidunt. Mauris bibendum tempus
-        tellus, ut tempor nisl. Nunc nec justo tincidunt, venenatis dui sit
-        amet, pellentesque elit. Donec eleifend maximus arcu vitae maximus.
+        As an individual passionate about software engineering, I pride myself
+        on my dedication to turning concepts into real, efficient, and
+        well-designed applications. My projects reflect that passion. Each one
+        is built with care to help companies, individuals, and teams solve real
+        problems. I completed my undergraduate computer science studies in 2025,
+        and I graduated Summa Cum Laude (Highest Honors). I write all my code by
+        hand to ensure strong performance and to keep sharpening my skill. Every
+        project showcased here is a representation of the passion I have for
+        program development, and my commitment to learning, creating, and making
+        technology that helps others.
       </p>
+      <div className="w-full flex flex-row justify-between">
+        <ProjectCard title={"Reactive Chat"}>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit.
+          </p>
+        </ProjectCard>
+        <ProjectCard title={"The Speech Games"}>
+          {" "}
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit.
+          </p>
+        </ProjectCard>
+        <ProjectCard title={"Portfolio"}>
+          {" "}
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit.
+          </p>{" "}
+        </ProjectCard>
+      </div>
     </div>
   );
 }
