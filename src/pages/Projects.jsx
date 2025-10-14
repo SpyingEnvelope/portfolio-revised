@@ -25,7 +25,7 @@ function Projects() {
         program development, and my commitment to learning, creating, and making
         technology that helps others.
       </p>
-      <div className="w-full flex flex-row justify-between">
+      <div className="w-full flex flex-row justify-between flex-wrap">
         <ProjectCard title={"Reactive Chat"}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
