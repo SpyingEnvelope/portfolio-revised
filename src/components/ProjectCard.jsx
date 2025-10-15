@@ -16,8 +16,10 @@ PROPS:
   url: STRING the url to open when the card is clicked
 */
 function ProjectCard({ children, title, links, icon, image, url }) {
+
   // Used to deal with sizing the card on mobile devices
   const [mobileSize, setMobileSize] = useState("w-[392px] h-[372px]");
+  const [singleView, setSingleView] = useState(false);
 
   /* This useEffect executes once. First, it sets the mobile size to auto if
   a mobile screen size is detected. It also adds a listener event to the window
@@ -27,11 +29,21 @@ function ProjectCard({ children, title, links, icon, image, url }) {
       setMobileSize("w-full h-auto");
     }
 
+    if (window.innerWidth < 872) {
+      setSingleView(true);
+    }
+
     window.addEventListener("resize", () => {
       if (window.innerWidth < 451) {
         setMobileSize("w-full h-auto");
       } else {
         setMobileSize("w-[392px] h-[372px]");
+      }
+
+      if (window.innerWidth < 872) {
+        setSingleView(true);
+      } else {
+        setSingleView(false);
       }
     });
   }, []);
@@ -72,6 +84,8 @@ function ProjectCard({ children, title, links, icon, image, url }) {
       }}
       initial="entry"
       whileHover="hover"
+      whileInView={singleView ? "hover" : null}
+      viewport={{amount: 0.9}}
       transition={{ duration: 0.4 }}
     >
       <div className="absolute w-full h-full overflow-hidden">
