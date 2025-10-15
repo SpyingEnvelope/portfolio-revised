@@ -19,7 +19,7 @@ const cardInfoObj = {
   },
   fullstack: {
     head: "Full-stack",
-    para: "Experience working with JavaScript, TypeScript, Java, and Python. Also experienced with popular frameworks such as React and Express.",
+    para: "Experienced in JavaScript, TypeScript, Java, and Python. Also experienced with popular frameworks such as React and Express.",
     icon: <PiDevToLogoDuotone className="text-3xl" />,
   },
   dedication: {
@@ -29,7 +29,7 @@ const cardInfoObj = {
   },
   front: {
     head: "Frontend",
-    para: "Experience working with JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Tailwind.",
+    para: "Experienced in JavaScript, TypeScript, Java, and Python. Also worked with popular frameworks such as React and Tailwind.",
     icon: <PiDevToLogoDuotone className="text-3xl" />,
   },
   back: {

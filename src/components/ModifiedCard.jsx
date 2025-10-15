@@ -50,7 +50,7 @@ function ModifiedCard({
 }) {
   return (
     <motion.div
-      className="relative flex flex-col w-90 h-45 bg-[#171B3B] rounded-xl"
+      className="relative flex flex-col w-90 h-45 bg-[#171B3B] rounded-xl reg-instrument-sans"
       variants={{
         idle: { x: left, y: top, opacity: 1 },
         hovering: {
@@ -83,7 +83,7 @@ function ModifiedCard({
           </Avatar>
         )}
 
-        <h3>{head}</h3>
+        <h3 className="reg-instrument-sans">{head}</h3>
         <MdVerified className="text-blue-400 text-sm relative right-2 top-1" />
       </div>
       <div className="flex flex-rowtext-left ml-3 text-left leading-6">
