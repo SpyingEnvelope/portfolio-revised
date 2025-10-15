@@ -11,20 +11,15 @@ function ProjectLogo({ icon, image }) {
     <motion.div
       variants={{
         entry: {
-          background: "#002A56",
           boxShadow: "0px 0px 0px #020618",
         },
-        hover: { background: "#FFFFFF", boxShadow: "0px 0px 8px #FFFFFF" },
+        hover: {boxShadow: "0px 0px 8px #FFFFFF" },
       }}
       transition={{ duration: 0.4 }}
-      className="w-[97px] h-[97px] rounded-xl flex justify-center items-center"
+      className="w-[97px] h-[97px] bg-[#002A56] rounded-xl flex justify-center items-center"
     >
       {icon ? (
         <motion.div
-          variants={{
-            entry: { color: "#FFFFFF" },
-            hover: { color: "#000000" },
-          }}
           className="text-5xl"
         >
           {icon}
