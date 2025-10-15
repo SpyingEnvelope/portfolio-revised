@@ -73,7 +73,6 @@ function ProjectCard({ children, title, links, icon, image, url }) {
       initial="entry"
       whileHover="hover"
       transition={{ duration: 0.4 }}
-      onClick={() => handleClick(url)}
     >
       <div className="absolute w-full h-full overflow-hidden">
         <motion.div
