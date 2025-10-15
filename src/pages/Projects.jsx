@@ -1,10 +1,24 @@
+/* This JSX file shows the project section of the website */
+
 import ProjectCard from "@/components/ProjectCard";
 import reactiveLogo from "/reactive-logo.png";
 import profile from "/vite.svg";
 import { GiTalk } from "react-icons/gi";
 
+
+/* The projects constant is an array of objects. It is used to populate the project cards
+  url: STRING the link that will open upon clicking the card
+  title: STRING the title that appears at the top of the card
+  para: STRING what is written inside of the card
+  image: REACT IMAGE IMPORT the image used to display. Displays if icon does not exist 
+  icon: REACTNODE the icon to display if an image is not used
+  links: ARRAY OF OBJECTS each object in the array has two properties: href and text.
+         href: STRING the url to go to when clicking the link/anchor tag
+         text: STRING the text to write inside the anchor tag
+  */
 const projects = [
   {
+    url: "https://reactive-chat-frontend-ua6jl.ondigitalocean.app/",
     title: "Reactive Chat",
     para: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.`,
     image: reactiveLogo,
@@ -21,6 +35,7 @@ const projects = [
     ],
   },
   {
+    url: "https://github.com/SpyingEnvelope/speech-games",
     title: "The Speech Games",
     para: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.`,
     image: false,
@@ -33,6 +48,7 @@ const projects = [
     ],
   },
   {
+    url: "https://github.com/SpyingEnvelope/portfolio-revised",
     title: "Portfolio",
     para: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.`,
     image: profile,
@@ -45,6 +61,11 @@ const projects = [
     ],
   },
 ];
+
+/* The return statement for the JSX code
+
+PROPS: None
+*/
 
 function Projects() {
   return (
@@ -78,6 +99,7 @@ function Projects() {
               image={project.image}
               icon={project.icon}
               links={project.links}
+              url={project.url}
             >
               {project.para}
             </ProjectCard>

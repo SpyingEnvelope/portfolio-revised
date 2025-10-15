@@ -175,7 +175,7 @@ function SpaceBanner() {
             topEntry={-20}
             animateDelay={0.5}
             tap={{
-              boxShadow: "0px 4px 5px -2px #FE9A00",
+              boxShadow: "0px 4px 5px -2px #3698D5",
               transition: { duration: 0.2 },
             }}
           >
@@ -192,7 +192,7 @@ function SpaceBanner() {
             animateDelay={0.65}
             shadow={"0px"}
             tap={{
-              boxShadow: "0px 4px 5px -2px #FE9A00",
+              boxShadow: "0px 4px 5px -2px #3698D5",
               transition: { duration: 0.2 },
             }}
           >

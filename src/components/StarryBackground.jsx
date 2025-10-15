@@ -22,7 +22,7 @@ function starCoordinates() {
 }
 
 
-/* Returns the stary bacgkround JSX code 
+/* Returns the starry bacgkround JSX code 
 PROPS: None*/ 
 function StarryBackground() {
   const coordArr = starCoordinates();

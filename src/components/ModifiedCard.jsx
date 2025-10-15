@@ -56,7 +56,7 @@ function ModifiedCard({
         hovering: {
           x: motionLeft,
           y: motionTop,
-          boxShadow: shadow ?? "0px 4px 5px -2px #FE9A00",
+          boxShadow: shadow ?? "0px 4px 5px -2px #3698D5",
         },
       }}
       initial={{
