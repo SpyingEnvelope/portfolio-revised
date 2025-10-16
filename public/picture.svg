@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 64 64" role="img" aria-label="Laptop with code">
+  <!-- Laptop screen frame -->
+  <rect x="6" y="8" width="52" height="30" rx="2" ry="2" fill="#6b7280"/>
+  <!-- Screen background -->
+  <rect x="9" y="11" width="46" height="24" rx="1" ry="1" fill="#1e293b"/>
+  <!-- Code lines -->
+  <g>
+    <rect x="12" y="14" width="10" height="1.5" rx="0.5" fill="#10b981"/> <!-- green -->
+    <rect x="24" y="14" width="18" height="1.5" rx="0.5" fill="#e5e7eb"/> <!-- gray -->
+    <rect x="12" y="17" width="30" height="1.5" rx="0.5" fill="#60a5fa"/> <!-- blue -->
+    <rect x="12" y="20" width="22" height="1.5" rx="0.5" fill="#f87171"/> <!-- red -->
+    <rect x="12" y="23" width="26" height="1.5" rx="0.5" fill="#a78bfa"/> <!-- purple -->
+    <rect x="12" y="26" width="32" height="1.5" rx="0.5" fill="#facc15"/> <!-- yellow -->
+  </g>
+  <!-- Keyboard base -->
+  <rect x="2" y="40" width="60" height="6" rx="1" ry="1" fill="#9ca3af"/>
+  <!-- Trackpad -->
+  <rect x="26" y="42" width="12" height="2" rx="0.5" ry="0.5" fill="#d1d5db"/>
+  <!-- Bottom hinge -->
+  <rect x="0" y="46" width="64" height="2" fill="#4b5563"/>
+</svg>

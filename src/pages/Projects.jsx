@@ -1,6 +1,7 @@
 /* This JSX file shows the project section of the website */
 
 import ProjectCard from "@/components/ProjectCard";
+import SectionHeader from "@/components/SectionHeader";
 import reactiveLogo from "/reactive-logo.png";
 import fsLogo from "/logo-fs-web.png"
 import profile from "/vite.svg";
@@ -95,9 +96,9 @@ function Projects() {
       id="projects"
       className="flex flex-col justify-center items-center mt-30"
     >
-      <h2 className="text-lg lg:text-xl bold-instrument-sans text-[#3698D5] tracking-widest">
+      <SectionHeader>
         PROJECTS
-      </h2>
+      </SectionHeader>
       <h3 className="bold-instrument-sans text-3xl lg:text-4xl tracking-widest">
         CREATING SOFTWARE <br /> THAT BRINGS VISIONS TO LIFE
       </h3>
@@ -108,7 +109,7 @@ function Projects() {
         well-designed applications. My projects reflect that passion. Each one
         is built with care to help companies, individuals, and teams solve real
         problems. I write all my code by hand to ensure strong performance and
-        to keep sharpening my skill. Every project showcased here is a
+        to keep sharpening my skills. Every project showcased here is a
         representation of my passion and commitment to learning, creating, and
         making technology that helps others.
       </p>
