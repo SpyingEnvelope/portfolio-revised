@@ -25,7 +25,7 @@ function ProjectLogo({ icon, image }) {
           {icon}
         </motion.div>
       ) : (
-        <img src={image} />
+        <img src={image} className="h-[50px] w-[50px]" />
       )}
     </motion.div>
   );
