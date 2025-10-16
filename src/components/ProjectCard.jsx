@@ -15,7 +15,7 @@ PROPS:
   image: REACT IMAGE IMPORT the image to display inside the logo
   url: STRING the url to open when the card is clicked
 */
-function ProjectCard({ children, title, links, icon, image, url }) {
+function ProjectCard({ children, title, links, icon, image }) {
 
   // Used to deal with sizing the card on mobile devices
   const [mobileSize, setMobileSize] = useState("w-[392px] h-[372px]");
@@ -47,12 +47,6 @@ function ProjectCard({ children, title, links, icon, image, url }) {
       }
     });
   }, []);
-
-  /* This function handles the operation of clicking the card.
-  It opens the url provided as a prop in a new window */
-  function handleClick(url) {
-    window.open(url, "_blank");
-  }
 
   // An array of <li> elements to display in the links section of the card
   let linksDisplay = [];

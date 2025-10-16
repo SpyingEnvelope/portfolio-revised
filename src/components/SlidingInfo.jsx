@@ -15,7 +15,7 @@ import { SqliteOriginal } from "devicons-react";
 import { ReactOriginal } from "devicons-react";
 import { GitOriginal } from "devicons-react";
 import { BootstrapOriginal } from "devicons-react";
-import { ExpressOriginal } from "devicons-react";
+import { SiExpress } from "react-icons/si";
 import { PandasOriginal } from "devicons-react";
 import { NumpyOriginal } from "devicons-react";
 import { TailwindcssOriginal } from "devicons-react";
@@ -42,7 +42,7 @@ const devArr = [
     {name: "Git", icon: <GitOriginal size={iconSize} />},
     {name: "Tailwind", icon: <TailwindcssOriginal size={iconSize} />},
     {name: "Bootstrap", icon: <BootstrapOriginal size={iconSize} />},
-    {name: "Express", icon: <ExpressOriginal size={iconSize} />},
+    {name: "Express", icon: <SiExpress size={iconSize} />},
     {name: "Node.js", icon: <NodejsOriginal size={iconSize} />},
     {name: "TensorFlow", icon: <TensorflowOriginal size={iconSize} />},
     {name: "Pandas", icon: <PandasOriginal size={iconSize} />},

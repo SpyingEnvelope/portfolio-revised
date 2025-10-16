@@ -2,9 +2,10 @@
 
 import ProjectCard from "@/components/ProjectCard";
 import reactiveLogo from "/reactive-logo.png";
+import fsLogo from "/logo-fs-web.png"
 import profile from "/vite.svg";
 import { GiTalk } from "react-icons/gi";
-
+import { PiCheckerboardDuotone } from "react-icons/pi";
 
 /* The projects constant is an array of objects. It is used to populate the project cards
   url: STRING the link that will open upon clicking the card
@@ -18,9 +19,8 @@ import { GiTalk } from "react-icons/gi";
   */
 const projects = [
   {
-    url: "https://reactive-chat-frontend-ua6jl.ondigitalocean.app/",
     title: "Reactive Chat",
-    para: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.`,
+    para: `An AAC software built with React, JavaScript, Express, and MongoDB to assist individuals with verbal challenges. Users can create personalized pages, while authentication and secure data handling are managed through the Express server for a safe, tailored communication experience.`,
     image: reactiveLogo,
     icon: false,
     links: [
@@ -35,9 +35,8 @@ const projects = [
     ],
   },
   {
-    url: "https://github.com/SpyingEnvelope/speech-games",
     title: "The Speech Games",
-    para: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.`,
+    para: `A Python game built with Pygame and SQLite3 to encourage children to speak. It streamlines data management for smooth modification and retrieval while handling multiple global and local states to dynamically determine and render the appropriate information on screen.`,
     image: false,
     icon: <GiTalk />,
     links: [
@@ -48,14 +47,37 @@ const projects = [
     ],
   },
   {
-    url: "https://github.com/SpyingEnvelope/portfolio-revised",
-    title: "Portfolio",
-    para: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.`,
+    title: "Revised Portfolio",
+    para: `My current portfolio website, built with React and JavaScript. It features a modern, unique interface. Motion for React powers dynamic, nested animations, while React Router manages navigation and invalid URLs to ensure users can easily access the right sections.`,
     image: profile,
     icon: false,
     links: [
       {
         href: "https://github.com/SpyingEnvelope/portfolio-revised",
+        text: "GitHub",
+      },
+    ],
+  },
+  {
+    title: "Full-Stack Portfolio",
+    para: `My old portfolio website, now offline, was designed to be CMS-like, allowing updates without coding. Built with React, MongoDB, and Express, it featured an admin section for CMS tools, authentication, and data handling. React Router and Motion for React enabled smooth, multi-page transitions.`,
+    image: fsLogo,
+    icon: false,
+    links: [
+      {
+        href: "https://github.com/SpyingEnvelope/portfolio-frontend",
+        text: "GitHub",
+      },
+    ],
+  },
+  {
+    title: "Sudoku Solver",
+    para: `A Sudoku Solver implemented in Java demonstrating Object-Oriented design. It employs a recursive backtracking algorithm for efficient puzzle resolution and improved readability. The program outputs each computational step to the console, providing transparent algorithmic tracing.`,
+    image: false,
+    icon: <PiCheckerboardDuotone />,
+    links: [
+      {
+        href: "https://github.com/SpyingEnvelope/java-sudoku-solver",
         text: "GitHub",
       },
     ],
@@ -99,7 +121,6 @@ function Projects() {
               image={project.image}
               icon={project.icon}
               links={project.links}
-              url={project.url}
             >
               {project.para}
             </ProjectCard>
