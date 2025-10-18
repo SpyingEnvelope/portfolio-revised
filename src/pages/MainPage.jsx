@@ -16,8 +16,8 @@ function MainPage() {
       <main>
         <Header />
         <Projects />
-        <IndexPage />
         <About />
+        <IndexPage />
       </main>
       <Footer />
     </>
