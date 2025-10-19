@@ -1,5 +1,5 @@
 /* This component displays a card for different projects */
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import { motion } from "motion/react";
 
 import starArray from "../utils/starUtils";
