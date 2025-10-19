@@ -15,4 +15,17 @@ for (let i = 0; i < 250; i++) {
   );
 }
 
+export const fullStar = [];
+
+for (let i = 0; i < 250; i++) {
+  fullStar.push(
+    <Star
+      x={Math.floor(Math.random() * 100) + "%"}
+      y={Math.floor(Math.random() * 100) + "%"}
+      key={i}
+      delay={i * 0.03}
+    />
+  );
+}
+
 export default starArray;

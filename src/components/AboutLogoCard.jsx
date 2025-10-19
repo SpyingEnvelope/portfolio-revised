@@ -7,8 +7,8 @@ function AboutLogoCard({ right }) {
       initial={right ? { x: 40, opacity: 0 } : { x: -40, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      viewport={{ once: true }}
-      className="h-90 w-90 rounded-2xl border-2 border-stone-500 overflow-hidden"
+      viewport={{ once: true, amount: 0.2 }}
+      className="h-90 w-90 rounded-2xl border-2 border-stone-500 overflow-hidden mb-5"
     >
       <img src={aboutPic} className="rounded-2xl" />
     </motion.div>
