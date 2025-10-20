@@ -1,14 +1,14 @@
 import { motion } from "motion/react";
 import { fullStar } from "@/utils/starUtils";
 
-function AboutInfoCard({ delay, right, mobileSize }) {
+function AboutInfoCard({ delay, right, mobileSize, children }) {
   return (
     <motion.div
       initial={right ? { x: -40, opacity: 0 } : { x: 40, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
-      className={`relative ${mobileSize} md:mr-8 md:h-[372px] md:w-196
+      className={`relative ${mobileSize} md:mr-8 md:h-[300px] md:w-196
        rounded-2xl bg-black border-2 border-stone-500 reg-instrument-sans flex ${
          right ? "justify-start" : "justify-end"
        } items-center overflow-hidden `}
@@ -82,23 +82,14 @@ function AboutInfoCard({ delay, right, mobileSize }) {
           ></motion.div>
         </div>
       </div>
-
-      <p
+        
+      <div
         className={`w-[100%] md:w-[52%] lg:w-[65%] xl:w-[70%] text-center md:text-left
         } text-md block p-5 md:p-0 md:m-5
-        } backdrop-blur-sm md:backdrop-blur-none z-20`}
+        } backdrop-blur-sm md:backdrop-blur-none z-20 text-base md:text-sm lg:text-base`}
       >
-        Hi, I’m Gad Cooper, a full-stack developer passionate about building
-        software that empowers people and organizations. I value personal growth
-        and continuous learning, which led me to reignite my passion for
-        programming in 2019 . Shortly after, I began pursuing a Bachelor Degree
-        in Computer Science. I completed my studies in 2025, graduating with
-        highest academic honors.
-        <br />
-        <br /> I try to create every software with love and care. In my off
-        time, I enjoy spending time with my two amazing kids, hike, and play
-        video games, often kid-friendly ones.
-      </p>
+        {children}
+      </div>
     </motion.div>
   );
 }
