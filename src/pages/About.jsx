@@ -4,58 +4,20 @@ the languages I worked with, and the technologies I am familiar with.*/
 import { useEffect, useState } from "react";
 import AboutRow from "@/components/AboutRow";
 import SectionHeader from "@/components/SectionHeader";
+import EducationCard from "@/components/EducationCard";
+import devArr from "@/utils/devArr";
 
 import aboutPic from "/about-pic.jpeg";
 import codeSvg from "/b5.svg";
 import gradPic from "/grad.jpg";
+import uniPic from "/University_of_the_People_seal.png";
+import bvcPic from "/Bow_Valley_College.png";
 
-import PythonOriginal from "devicons-react/icons/PythonOriginal";
-import { ExpressOriginal, JavascriptOriginal } from "devicons-react";
+import { JavascriptOriginal } from "devicons-react";
 import { TypescriptOriginal } from "devicons-react";
-import { JavaOriginal } from "devicons-react";
-import { Html5Original } from "devicons-react";
-import { Css3Original } from "devicons-react";
-import { RstudioOriginal } from "devicons-react";
-import { MysqlOriginal } from "devicons-react";
-import { AzuresqldatabaseOriginal } from "devicons-react";
 import { MongodbOriginal } from "devicons-react";
-import { SqliteOriginal } from "devicons-react";
 import { ReactOriginal } from "devicons-react";
-import { GitOriginal } from "devicons-react";
-import { BootstrapOriginal } from "devicons-react";
-import { SiExpress } from "react-icons/si";
-import { PandasOriginal } from "devicons-react";
-import { NumpyOriginal } from "devicons-react";
-import { TailwindcssOriginal } from "devicons-react";
-import { TensorflowOriginal } from "devicons-react";
 import { NodejsOriginal } from "devicons-react";
-
-// A constant to set the size of the icons
-const iconSize = "2em";
-
-// An object array that stores the text and icons to be displayed by the marquee
-const devArr = [
-  { name: "Java", icon: <JavaOriginal size={iconSize} /> },
-  { name: "JavaScript", icon: <JavascriptOriginal size={iconSize} /> },
-  { name: "Python", icon: <PythonOriginal size={iconSize} /> },
-  { name: "TypeScript", icon: <TypescriptOriginal size={iconSize} /> },
-  { name: "HTML", icon: <Html5Original size={iconSize} /> },
-  { name: "CSS", icon: <Css3Original size={iconSize} /> },
-  { name: "R", icon: <RstudioOriginal size={iconSize} /> },
-  { name: "SQL", icon: <AzuresqldatabaseOriginal size={iconSize} /> },
-  { name: "MySQL", icon: <MysqlOriginal size={iconSize} /> },
-  { name: "MongoDB", icon: <MongodbOriginal size={iconSize} /> },
-  { name: "SQLite", icon: <SqliteOriginal size={iconSize} /> },
-  { name: "React", icon: <ReactOriginal size={iconSize} /> },
-  { name: "Git", icon: <GitOriginal size={iconSize} /> },
-  { name: "Tailwind", icon: <TailwindcssOriginal size={iconSize} /> },
-  { name: "Bootstrap", icon: <BootstrapOriginal size={iconSize} /> },
-  { name: "Express", icon: <SiExpress size={iconSize} /> },
-  { name: "Node.js", icon: <NodejsOriginal size={iconSize} /> },
-  { name: "TensorFlow", icon: <TensorflowOriginal size={iconSize} /> },
-  { name: "Pandas", icon: <PandasOriginal size={iconSize} /> },
-  { name: "NumPy", icon: <NumpyOriginal size={iconSize} /> },
-];
 
 import {
   Carousel,
@@ -112,7 +74,7 @@ function About() {
           mobileSizing={mobileSizing}
           title={"STACK"}
         >
-          <p className="mb-5 md:mb-3 lg:mb-5">
+          <p className="mb-5 mt-3 md:mb-3 lg:mb-5">
             My current web development stack uses{" "}
             <ReactOriginal className="inline relative bottom-0.5" /> React,{" "}
             <JavascriptOriginal className="inline relative bottom-0.5 rounded-xs" />{" "}
@@ -155,7 +117,7 @@ function About() {
               <CarouselNext className="w-5 h-5 bg-black border-white/50" />
             </Carousel>
           </div>
-          <div className="relative w-full h-[100px] bg-stone-700/50 rounded-lg flex flex-col items-center justify-center mt-4 md:mt-1 lg:mt-4">
+          <div className="relative w-full h-[100px] bg-stone-700/50 rounded-lg flex flex-col items-center justify-center mt-4 md:mt-1 xl:mt-2">
             <div className="relative bottom-2 mb-2">
               <h3 className="reg-instrument-sans tracking-widest text-sm">
                 Frameworks and Tech
@@ -188,7 +150,31 @@ function About() {
             </Carousel>
           </div>
         </AboutRow>
-        <AboutRow image={gradPic} mobileSizing={mobileSizing} title={"EDUCATION"} />
+        <AboutRow
+          image={gradPic}
+          mobileSizing={mobileSizing}
+          title={"EDUCATION"}
+        >
+          <p>
+            I pursued two different post-secondary education paths. In 2016, I
+            received a Justice Studies Diploma. I later returned to university
+            to pursue my passion: software engineering and computer science.{" "}
+            <span className="inline md:hidden xl:inline">
+              I have two different graduation dates in two different fields!
+            </span>
+          </p>
+          <div className="flex justify-evenly space-x-5 mt-5">
+            <EducationCard pic={bvcPic} grad={"04/2016"} gpa={"3.96"} lgWid={"40px"} mdWid={"40px"}>Diploma in <br /> Justice Studies</EducationCard>
+            <EducationCard pic={uniPic} grad={"04/2025"} gpa={"3.95"}>
+              <span className="inline md:hidden lg:inline">
+                Bachelor of Science
+                <br />
+              </span>
+              <span className="hidden md:inline lg:hidden">BSc</span> in
+              Computer Science
+            </EducationCard>
+          </div>
+        </AboutRow>
       </div>
     </div>
   );
