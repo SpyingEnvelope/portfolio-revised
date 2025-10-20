@@ -86,7 +86,7 @@ function AboutInfoCard({ delay, right, mobileSize }) {
       <p
         className={`w-[100%] md:w-[52%] lg:w-[65%] xl:w-[70%] text-center md:text-left
         } text-md block p-5 md:p-0 md:m-5
-        } backdrop-blur-sm md:backdrop-blur-none z-100`}
+        } backdrop-blur-sm md:backdrop-blur-none z-20`}
       >
         Hi, I’m Gad Cooper, a full-stack developer passionate about building
         software that empowers people and organizations. I value personal growth
