@@ -89,7 +89,7 @@ function About() {
         CRAFTING SUCCESS THROUGH <br /> HARD WORK AND KNOWLEDGE
       </h3>
       <div className="flex flex-col">
-        <AboutRow image={aboutPic} mobileSizing={mobileSizing}>
+        <AboutRow image={aboutPic} mobileSizing={mobileSizing} title={"BIO"}>
           <p>
             Hi, I’m Gad Cooper, a full-stack developer passionate about building
             software that empowers people and organizations. My passion led me
@@ -110,6 +110,7 @@ function About() {
           delay={1}
           image={codeSvg}
           mobileSizing={mobileSizing}
+          title={"STACK"}
         >
           <p className="mb-5 md:mb-3 lg:mb-5">
             My current web development stack uses{" "}
@@ -187,7 +188,7 @@ function About() {
             </Carousel>
           </div>
         </AboutRow>
-        <AboutRow image={gradPic} mobileSizing={mobileSizing} />
+        <AboutRow image={gradPic} mobileSizing={mobileSizing} title={"EDUCATION"} />
       </div>
     </div>
   );
