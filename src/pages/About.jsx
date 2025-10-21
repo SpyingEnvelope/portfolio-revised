@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AboutRow from "@/components/AboutRow";
 import SectionHeader from "@/components/SectionHeader";
 import EducationCard from "@/components/EducationCard";
+import AboutTechnology from "@/components/AboutTechnology";
 import devArr from "@/utils/devArr";
 
 import aboutPic from "/about-pic.jpeg";
@@ -18,6 +19,12 @@ import { TypescriptOriginal } from "devicons-react";
 import { MongodbOriginal } from "devicons-react";
 import { ReactOriginal } from "devicons-react";
 import { NodejsOriginal } from "devicons-react";
+import { JavaOriginal } from "devicons-react";
+import { PythonOriginal } from "devicons-react";
+
+
+
+
 
 import {
   Carousel,
@@ -83,10 +90,21 @@ function About() {
             TypeScript,{" "}
             <MongodbOriginal className="inline relative bottom-0.5" /> MongoDB,{" "}
             and <NodejsOriginal className="inline relative bottom-0.5" />{" "}
-            Node.js.
+            Node.js. I enjoy the flow and flexibiliy this stack offers me.
+            <br />
+            <br />
+            When it comes to programming local software,{" "}
+            <JavaOriginal className="inline relative bottom-0.5" /> Java and
+            <PythonOriginal className="inline relative bottom-0.5" /> Python remain my two favourite languages.{" "}
+            <span className="inline md:hidden xl:inline">
+              The Java language's portability and object-oriented design makes
+              the process of building scalable software easy. Python's strengths
+              lie in its simplicity and large community.
+            </span>{" "}
+            Check out the full list of tech I have experience with below!
           </p>
-          <div className="relative w-full h-[100px] bg-stone-700/50 rounded-lg flex flex-col items-center justify-center overflow-hidden">
-            <div className="relative bottom-2 mb-2">
+          {/* <div className="relative w-full h-[100px] bg-stone-700/50 rounded-lg flex flex-col items-center justify-center overflow-hidden"> */}
+          {/* <div className="relative bottom-2 mb-2">
               <h3 className="reg-instrument-sans tracking-widest text-sm">
                 Languages
               </h3>
@@ -147,8 +165,8 @@ function About() {
               </CarouselContent>
               <CarouselPrevious className="w-5 h-5 bg-black border-white/50" />
               <CarouselNext className="w-5 h-5 bg-black border-white/50" />
-            </Carousel>
-          </div>
+            </Carousel> */}
+          {/* </div> */}
         </AboutRow>
         <AboutRow
           image={gradPic}
@@ -164,7 +182,15 @@ function About() {
             </span>
           </p>
           <div className="flex justify-evenly space-x-5 mt-5">
-            <EducationCard pic={bvcPic} grad={"04/2016"} gpa={"3.96"} lgWid={"40px"} mdWid={"40px"}>Diploma in <br /> Justice Studies</EducationCard>
+            <EducationCard
+              pic={bvcPic}
+              grad={"04/2016"}
+              gpa={"3.96"}
+              lgWid={"40px"}
+              mdWid={"40px"}
+            >
+              Diploma in <br /> Justice Studies
+            </EducationCard>
             <EducationCard pic={uniPic} grad={"04/2025"} gpa={"3.95"}>
               <span className="inline md:hidden lg:inline">
                 Bachelor of Science
@@ -175,6 +201,7 @@ function About() {
             </EducationCard>
           </div>
         </AboutRow>
+        <AboutTechnology />
       </div>
     </div>
   );
