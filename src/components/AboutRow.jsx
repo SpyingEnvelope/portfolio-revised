@@ -12,7 +12,7 @@ function AboutRow({ right, title, delay, image, mobileSizing, children }) {
         initial={right ? { y: -40, opacity: 0 } : { y: -40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 1 }}
         className={`relative top-10 flex justify-center items-center`}
       >
         <h3
