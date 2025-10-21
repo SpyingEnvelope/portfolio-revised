@@ -6,7 +6,6 @@ import AboutRow from "@/components/AboutRow";
 import SectionHeader from "@/components/SectionHeader";
 import EducationCard from "@/components/EducationCard";
 import AboutTechnology from "@/components/AboutTechnology";
-import devArr from "@/utils/devArr";
 
 import aboutPic from "/about-pic.jpeg";
 import codeSvg from "/b5.svg";
@@ -21,18 +20,6 @@ import { ReactOriginal } from "devicons-react";
 import { NodejsOriginal } from "devicons-react";
 import { JavaOriginal } from "devicons-react";
 import { PythonOriginal } from "devicons-react";
-
-
-
-
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 function About() {
   const [mobileSizing, setMobileSizing] = useState(false);
@@ -103,70 +90,6 @@ function About() {
             </span>{" "}
             Check out the full list of tech I have experience with below!
           </p>
-          {/* <div className="relative w-full h-[100px] bg-stone-700/50 rounded-lg flex flex-col items-center justify-center overflow-hidden"> */}
-          {/* <div className="relative bottom-2 mb-2">
-              <h3 className="reg-instrument-sans tracking-widest text-sm">
-                Languages
-              </h3>
-            </div>
-            <Carousel
-              className={`relative xl:w-100 lg:w-70 md:w-31 ${
-                mobileSizing ? "w-30" : "w-50"
-              }`}
-            >
-              <CarouselContent>
-                {devArr.map((obj, index) => {
-                  if (index < 8) {
-                    return (
-                      <CarouselItem
-                        className={`flex justify-center items-center flex-col ${
-                          mobileSizing ? "basis-1/2" : "basis-1/3"
-                        } md:basis-1/2 lg:basis-1/3 text-base text-white/70`}
-                        key={index + "carousel"}
-                      >
-                        {obj.icon}
-                        <span className="hidden lg:block">{obj.name}</span>
-                      </CarouselItem>
-                    );
-                  }
-                })}
-              </CarouselContent>
-              <CarouselPrevious className="w-5 h-5 bg-black border-white/50" />
-              <CarouselNext className="w-5 h-5 bg-black border-white/50" />
-            </Carousel>
-          </div>
-          <div className="relative w-full h-[100px] bg-stone-700/50 rounded-lg flex flex-col items-center justify-center mt-4 md:mt-1 xl:mt-2">
-            <div className="relative bottom-2 mb-2">
-              <h3 className="reg-instrument-sans tracking-widest text-sm">
-                Frameworks and Tech
-              </h3>
-            </div>
-            <Carousel
-              className={`relative xl:w-100 lg:w-70 md:w-31 ${
-                mobileSizing ? "w-30" : "w-50"
-              }`}
-            >
-              <CarouselContent>
-                {devArr.map((obj, index) => {
-                  if (index > 7) {
-                    return (
-                      <CarouselItem
-                        className={`flex justify-center items-center flex-col ${
-                          mobileSizing ? "basis-1/2" : "basis-1/3"
-                        } md:basis-1/2 lg:basis-1/3 text-base text-white/70`}
-                        key={index + "carousel"}
-                      >
-                        {obj.icon}
-                        <span className="hidden lg:block">{obj.name}</span>
-                      </CarouselItem>
-                    );
-                  }
-                })}
-              </CarouselContent>
-              <CarouselPrevious className="w-5 h-5 bg-black border-white/50" />
-              <CarouselNext className="w-5 h-5 bg-black border-white/50" />
-            </Carousel> */}
-          {/* </div> */}
         </AboutRow>
         <AboutRow
           image={gradPic}
