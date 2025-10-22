@@ -8,7 +8,7 @@ function Contact() {
   const [sent, setSent] = useState(false);
   const formRef = useRef();
 
-  function emailAction(prevFormData, formData) {
+  async function emailAction(prevFormData, formData) {
     const email = formData.get("email");
     const name = formData.get("name");
     const message = formData.get("message");
@@ -34,27 +34,35 @@ function Contact() {
       };
     }
 
-    sendEmail();
-
+    await sendEmail();
     return { errors: null };
   }
 
   function sendEmail() {
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_PUBLIC_SERVICE,
-        import.meta.env.VITE_TEMPLATE_ID,
-        formRef.current,
-        { publicKey: import.meta.env.VITE_PUBLIC_KEY }
-      )
-      .then(
-        () => {
-          console.log("EMAIL SENT SUCESSFULLY");
-        },
-        (error) => {
-          console.log("EMAIL FAILED... " + error.text);
-        }
-      );
+    return new Promise((resolve, reject) =>
+      setTimeout(() => {
+        console.log("operation resolved");
+        resolve("nice");
+      }, 5000)
+    );
+    /* This commented line works for sending emails. Please test states
+    that imitate sending emails to avoid using tokens.*/
+
+    // emailjs
+    //   .sendForm(
+    //     import.meta.env.VITE_PUBLIC_SERVICE,
+    //     import.meta.env.VITE_TEMPLATE_ID,
+    //     formRef.current,
+    //     { publicKey: import.meta.env.VITE_PUBLIC_KEY }
+    //   )
+    //   .then(
+    //     () => {
+    //       console.log("EMAIL SENT SUCESSFULLY");
+    //     },
+    //     (error) => {
+    //       console.log("EMAIL FAILED... " + error.text);
+    //     }
+    //   );
   }
 
   const [formState, formAction, pending] = useActionState(emailAction, {
@@ -151,38 +159,61 @@ function Contact() {
           text-left mb-3 focus:outline-none`}
           defaultValue={formState.enteredValues?.message}
         />
-        <motion.button
-          variants={{
-            entry: {
-              backgroundColor: "#010412",
-              boxShadow: "0px 0px 3px #3698D5",
-              border: "1px solid rgba(54, 152, 213, 0.7)",
-              color: "#FFFFFF",
-              scale: 1,
-            },
-            hover: {
-              backgroundColor: "rgba(255, 255, 255, 0.9)",
+        {pending ? (
+          <button
+            className={`relative overflow-hidden text-black
+           w-40 h-10 rounded-md bg-[#FFFFFF] opacity-50 cursor-not-allowed`}
+            style={{
               boxShadow: "0px 0px 15px #FFFFFF",
               border: "1px solid #FFFFFF",
-              color: "#000000",
-              scale: 1,
-            },
-            tap: {
-              backgroundColor: "rgba(255, 255, 255, 0.8)",
-              boxShadow: "0px 0px 15px #FFFFFF",
-              border: "1px solid #FFFFFF",
-              color: "#000000",
-              transition: { type: "spring", duration: 0.1 },
-            },
-          }}
-          initial="entry"
-          whileHover="hover"
-          whileTap="tap"
-          type="submit"
-          className="relative overflow-hidden text-white w-40 h-10 rounded-md text-black cursor-pointer"
-        >
-          <span>Send Message</span>
-        </motion.button>
+            }}
+          >
+            Sending...
+          </button>
+        ) : (
+          <motion.button
+            variants={{
+              entry: {
+                backgroundColor: "#010412",
+                boxShadow: "0px 0px 3px #3698D5",
+                border: "1px solid rgba(54, 152, 213, 0.7)",
+                color: "#FFFFFF",
+                scale: 1,
+              },
+              hover: {
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                boxShadow: "0px 0px 15px #FFFFFF",
+                border: "1px solid #FFFFFF",
+                color: "#000000",
+                scale: 1,
+              },
+              tap: {
+                backgroundColor: "rgba(255, 255, 255, 0.8)",
+                boxShadow: "0px 0px 15px #FFFFFF",
+                border: "1px solid #FFFFFF",
+                color: "#000000",
+                transition: { type: "spring", duration: 0.1 },
+              },
+              sending: {
+                opacity: 0.5,
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                boxShadow: "0px 0px 15px #FFFFFF",
+                border: "1px solid #FFFFFF",
+                color: "#000000",
+                scale: 1,
+              },
+            }}
+            initial="entry"
+            whileHover="hover"
+            whileTap="tap"
+            type="submit"
+            disabled={pending}
+            className={`relative overflow-hidden text-white
+           w-40 h-10 rounded-md text-black cursor-pointer`}
+          >
+            <span>Send Message</span>
+          </motion.button>
+        )}
       </form>
     </div>
   );
