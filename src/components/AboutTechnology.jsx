@@ -1,5 +1,9 @@
+/* This component displays the Technology section of the about me section */
+
+// Motion is used to display animations when the element enters the viewport
 import { motion } from "motion/react";
 
+// This displays every tech columns, e.g., Languages, Databases, etc...
 import AboutTechSubsection from "./AboutTechSubsection";
 
 // Language imports
@@ -22,12 +26,12 @@ import { DiJqueryLogo } from "react-icons/di";
 import { SiPandas } from "react-icons/si";
 import { SiMongoose } from "react-icons/si";
 
-// Database Imports
+// Database imports
 import { DiMongodb } from "react-icons/di";
 import { TbBrandMysql } from "react-icons/tb";
 import { SiSqlite } from "react-icons/si";
 
-// Tools Imports
+// Tools imports
 import { FcLinux } from "react-icons/fc";
 import { FaGitAlt } from "react-icons/fa";
 import { IoLogoDocker } from "react-icons/io5";
@@ -72,7 +76,6 @@ const langIcons = [
 ];
 
 // Tools array
-// Languages array
 const toolsIcons = [
   { icon: <FcLinux />, name: "Linux", color: "text-[#ed272b]" },
   { icon: <FaGitAlt />, name: "Git", color: "text-[#df513c]" },
@@ -87,6 +90,8 @@ const toolsIcons = [
   },
 ];
 
+/* The return statement of the component.
+PROPS: None */
 function AboutTechnology() {
   return (
     <motion.div
