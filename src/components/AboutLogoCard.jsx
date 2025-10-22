@@ -1,5 +1,11 @@
+/* This component displays the image card next to the info card in the about me section */
 import { motion } from "motion/react";
 
+/* The return statement of the component
+PROPS:
+right: BOOLEAN used to decide whether this component should be placed to the right of the info card.
+image: REACT IMAGE IMPORT the image to display in the card.
+mobileSize: STRING used to size the component dynamically on mobile screens */
 function AboutLogoCard({ right, image, mobileSize}) {
   return (
     <motion.div
