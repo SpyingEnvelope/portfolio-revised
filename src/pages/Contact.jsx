@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { useActionState } from "react";
 import SectionHeader from "@/components/SectionHeader";
 
@@ -32,12 +33,13 @@ function Contact() {
         <label htmlFor="name" className="mb-3">
           Name
         </label>
-        <input
+        <motion.input
+          whileFocus={{boxShadow: "0px 0px 5px #3698d5"}}
           id="name"
           type="text"
           name="name"
           autoComplete="name"
-          className="block w-130 h-10 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3"
+          className="block w-130 h-10 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3 focus:outline-none"
           required
         />{" "}
         <label htmlFor="company" className="mb-3">
@@ -48,7 +50,7 @@ function Contact() {
           type="text"
           name="company"
           autoComplete="organization"
-          className="block w-130 h-10 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3"
+          className="block w-130 h-10 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3 focus:outline-none"
         />
         <label htmlFor="email" className="mb-3">
           Email
@@ -58,7 +60,7 @@ function Contact() {
           type="email"
           name="email"
           autoComplete="organization"
-          className="block w-130 h-10 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3"
+          className="block w-130 h-10 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3 focus:outline-none"
           required
         />
         <label htmlFor="phone" className="mb-3">
@@ -69,7 +71,7 @@ function Contact() {
           type="tel"
           name="phone"
           autoComplete="organization"
-          className="block w-130 h-10 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3"
+          className="block w-130 h-10 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3 focus:outline-none"
         />
         <label htmlFor="phone" className="mb-3">
           Message
@@ -79,7 +81,7 @@ function Contact() {
           type="text"
           name="message"
           autoComplete="organization"
-          className="block w-150 h-50 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3"
+          className="block w-150 h-50 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3 focus:outline-none"
         />
         <button
           type="submit"
