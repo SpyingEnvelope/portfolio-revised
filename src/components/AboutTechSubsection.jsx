@@ -1,7 +1,7 @@
 /* The component displays a single column in the Technology about me section */
 import { motion } from "motion/react";
 
-/* The return statement of the component
+/* The function exported as a component.
 PROPS:
 title: STRING the title to display in the subsection.
 tech: ARRAY OF OBJECTS An array used to display all the different tech.

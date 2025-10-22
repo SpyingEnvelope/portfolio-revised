@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 /* The fullStar import is an array filled with Star components to display in the background */
 import { fullStar } from "@/utils/starUtils";
 
-/* The return statement for the component
+/* The function exported as a component
 PROPS:
 delay: NUMBER used to state how many seconds of delay should exist before the planet animation starts.
 right: BOOLEAN used to decide what type of animation to play when the card enters the viewport.

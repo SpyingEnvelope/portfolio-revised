@@ -90,7 +90,7 @@ const toolsIcons = [
   },
 ];
 
-/* The return statement of the component.
+/* The function exported as a component.
 PROPS: None */
 function AboutTechnology() {
   return (
