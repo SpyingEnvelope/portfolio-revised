@@ -1,7 +1,16 @@
+import { useActionState } from "react";
 import SectionHeader from "@/components/SectionHeader";
 
 function Contact() {
-  function handleSubmit(event) {}
+  function emailAction(prevFormData, formData) {
+    const email = formData.get("email");
+    const name = formData.get("name");
+    const message = formData.get("message");
+  }
+
+  const [formState, formAction, pending] = useActionState(emailAction, {
+    errors: null,
+  });
 
   return (
     <div className="mt-30 flex flex-col justify-center items-center reg-instrument-sans">
@@ -16,7 +25,10 @@ function Contact() {
         free to fill out the form below and share a bit about what’s on your
         mind. I’ll get back to you as soon as I can.
       </p>
-      <form className="flex flex-col w-full items-center justifyt-center shrink">
+      <form
+        action={formAction}
+        className="flex flex-col w-full items-center justifyt-center shrink"
+      >
         <label htmlFor="name" className="mb-3">
           Name
         </label>
@@ -63,12 +75,18 @@ function Contact() {
           Message
         </label>
         <textarea
-          id="phone"
-          type="tel"
-          name="phone"
+          id="message"
+          type="text"
+          name="message"
           autoComplete="organization"
           className="block w-150 h-50 bg-[#010412] rounded-md border-1 border-stone-500 text-center mb-3"
         />
+        <button
+          type="submit"
+          className="bg-white w-20 rounded-md text-black border-1 border-black cursor-pointer"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
