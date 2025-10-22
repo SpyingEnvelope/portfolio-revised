@@ -1,13 +1,60 @@
 import { motion } from "motion/react";
-import { useActionState } from "react";
+import { useActionState, useState, useRef } from "react";
+import { isPhone } from "@/utils/formValidation";
+import emailjs from "@emailjs/browser";
 import SectionHeader from "@/components/SectionHeader";
 
 function Contact() {
+  const [sent, setSent] = useState(false);
+  const formRef = useRef();
+
   function emailAction(prevFormData, formData) {
     const email = formData.get("email");
     const name = formData.get("name");
     const message = formData.get("message");
-    const phone = formData.get("phone")
+    const phone = formData.get("phone");
+    const company = formData.get("company");
+
+    const errors = [];
+
+    if (phone && !isPhone(phone)) {
+      errors.push("Please enter a valid phone number.");
+    }
+
+    if (errors.length > 0) {
+      return {
+        errors,
+        enteredValues: {
+          email,
+          name,
+          message,
+          phone,
+          company,
+        },
+      };
+    }
+
+    sendEmail();
+
+    return { errors: null };
+  }
+
+  function sendEmail() {
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_PUBLIC_SERVICE,
+        import.meta.env.VITE_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: import.meta.env.VITE_PUBLIC_KEY }
+      )
+      .then(
+        () => {
+          console.log("EMAIL SENT SUCESSFULLY");
+        },
+        (error) => {
+          console.log("EMAIL FAILED... " + error.text);
+        }
+      );
   }
 
   const [formState, formAction, pending] = useActionState(emailAction, {
@@ -29,6 +76,7 @@ function Contact() {
       </p>
       <form
         action={formAction}
+        ref={formRef}
         className="flex flex-col w-full items-center justifyt-center shrink"
       >
         <label htmlFor="name" className="mb-3">
@@ -44,6 +92,7 @@ function Contact() {
           focus:shadow-sm focus:shadow-[#3698d5] 
           text-center mb-3 focus:outline-none`}
           required
+          defaultValue={formState.enteredValues?.name}
         />{" "}
         <label htmlFor="company" className="mb-3">
           Company (optional)
@@ -57,6 +106,7 @@ function Contact() {
           border-white/50 focus:border-[#3698d5]/50 
           focus:shadow-sm focus:shadow-[#3698d5] 
           text-center mb-3 focus:outline-none`}
+          defaultValue={formState.enteredValues?.company}
         />
         <label htmlFor="email" className="mb-3">
           Email
@@ -71,6 +121,7 @@ function Contact() {
           focus:shadow-sm focus:shadow-[#3698d5] 
           text-center mb-3 focus:outline-none`}
           required
+          defaultValue={formState.enteredValues?.email}
         />
         <label htmlFor="phone" className="mb-3">
           Phone Number (optional)
@@ -79,11 +130,12 @@ function Contact() {
           id="phone"
           type="tel"
           name="phone"
-          autoComplete="organization"
+          autoComplete="tel"
           className={`block w-full h-10 md:w-130 bg-[#010412] rounded-md border-1 
           border-white/50 focus:border-[#3698d5]/50 
           focus:shadow-sm focus:shadow-[#3698d5] 
           text-center mb-3 focus:outline-none`}
+          defaultValue={formState.enteredValues?.phone}
         />
         <label htmlFor="phone" className="mb-3">
           Message
@@ -92,11 +144,12 @@ function Contact() {
           id="message"
           type="text"
           name="message"
-          autoComplete="organization"
+          required
           className={`block w-full md:w-150 h-50 p-2 bg-[#010412] rounded-md border-1 
           border-white/50 focus:border-[#3698d5]/50 
           focus:shadow-sm focus:shadow-[#3698d5] 
           text-left mb-3 focus:outline-none`}
+          defaultValue={formState.enteredValues?.message}
         />
         <motion.button
           variants={{
