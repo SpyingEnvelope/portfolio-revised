@@ -1,5 +1,5 @@
-/* This is the about me section of the website. It will be displayed under the
-home page section. It will include a more in-depth level of detail about who I am,
+/* This is the about me section of the website. It is displayed under the
+projects section. It includes an in-depth level of detail about who I am,
 the languages I worked with, and the technologies I am familiar with.*/
 import { useEffect, useState } from "react";
 import AboutRow from "@/components/AboutRow";
@@ -7,12 +7,14 @@ import SectionHeader from "@/components/SectionHeader";
 import EducationCard from "@/components/EducationCard";
 import AboutTechnology from "@/components/AboutTechnology";
 
+// Image imports to be used with AboutRow components
 import aboutPic from "/about-pic.jpeg";
 import codeSvg from "/b5.svg";
 import gradPic from "/grad.jpg";
 import uniPic from "/University_of_the_People_seal.png";
 import bvcPic from "/Bow_Valley_College.png";
 
+// Icons used as children in the STACK section
 import { JavascriptOriginal } from "devicons-react";
 import { TypescriptOriginal } from "devicons-react";
 import { MongodbOriginal } from "devicons-react";
@@ -21,9 +23,18 @@ import { NodejsOriginal } from "devicons-react";
 import { JavaOriginal } from "devicons-react";
 import { PythonOriginal } from "devicons-react";
 
+
+/* The function exported as a component. 
+PROPS: None */
 function About() {
+  // This state is used to decide on whether or not cards should use dynamic scaling
   const [mobileSizing, setMobileSizing] = useState(false);
 
+  /* The dynamic scaling is only neccessary on mobile screens. 
+    useEffect is utilized here to first set mobileSizing to true if
+    the screen is already mobile. Otherwise, it sets it on window resizes.
+    This is important, as elements would otherwise not resize properly
+    when users resize their screens, such as when they change the orientations of their phones. */
   useEffect(() => {
     if (window.innerWidth < 451) {
       setMobileSizing(true);
