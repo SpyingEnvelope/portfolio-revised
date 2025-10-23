@@ -110,7 +110,10 @@ function Contact() {
                   borderWidth: "2px",
                   borderStyle: "solid",
                   borderColor: "#a1a5aa",
-                  opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+                  opacity: [
+                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+                  ],
                   overflow: "hidden",
                   boxShadow: "0 0 10px 1px #f0f0f0",
                 },
@@ -139,7 +142,10 @@ function Contact() {
                 variants={{ leave: { display: "block" } }}
                 className="absolute bottom-10 w-full h-full bg-[#cccdd0] rounded-full opacity-50 z-25"
               />
-              <motion.div variants={{ leave: { opacity: 0 } }} transition={{duration: 1}}>
+              <motion.div
+                variants={{ leave: { opacity: 0 } }}
+                transition={{ duration: 1 }}
+              >
                 <label htmlFor="name" className="mb-3">
                   Name
                 </label>
