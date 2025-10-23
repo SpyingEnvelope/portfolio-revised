@@ -3,8 +3,8 @@ import { motion } from "motion/react";
 function SuccessfullySent({ width, height }) {
   return (
     <motion.div
-      initial={{ y: -32, opacity: 0 }}
-      animate={{ y: -32, opacity: 1 }}
+      initial={{ y: -28, opacity: 0 }}
+      animate={{ y: -28, opacity: 1 }}
       transition={{ delay: 0.2, duration: 1 }}
       className="relative flex justify-center items-center w-full"
     >

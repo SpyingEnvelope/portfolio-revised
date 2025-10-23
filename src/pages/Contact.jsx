@@ -5,6 +5,16 @@ import emailjs from "@emailjs/browser";
 import SectionHeader from "@/components/SectionHeader";
 import SuccessfullySent from "@/components/SuccessfullySent";
 
+const keyStrokes = [];
+
+for (let i = 0; i < 20; i++) {
+  if (i == 19) {
+    keyStrokes.push(0);
+  } else {
+    keyStrokes.push(1);
+  }
+}
+
 function Contact() {
   const [sent, setSent] = useState(false);
   const [dimensions, setDimensions] = useState();
@@ -93,7 +103,7 @@ function Contact() {
         free to fill out the form below and share a bit about what’s on your
         mind. I’ll get back to you as soon as I can.
       </p>
-      <div className="flex w-full h-[664px] justify-center items-center">
+      <div className="flex w-full h-[664px] justify-center items-center overflow-hidden">
         <AnimatePresence>
           {sent ? (
             <SuccessfullySent key={"success"} />
@@ -104,16 +114,13 @@ function Contact() {
                   transform: "rotate(90deg) scale(0.9)",
                   position: "absolute",
                   width: "10rem",
-                  height: "10rem",
+                  height:"10rem",
                   backgroundColor: "#c0c1c4",
                   borderRadius: "9999px",
                   borderWidth: "2px",
                   borderStyle: "solid",
                   borderColor: "#a1a5aa",
-                  opacity: [
-                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-                  ],
+                  opacity: keyStrokes,
                   overflow: "hidden",
                   boxShadow: "0 0 10px 1px #f0f0f0",
                 },
@@ -121,30 +128,29 @@ function Contact() {
               key={"form"}
               action={formAction}
               ref={formRef}
-              className="flex flex-col items-center justify-center shrink z-20"
+              className="flex flex-col w-full md:w-auto items-center md:aspect-square justify-center shrink z-20"
               initial={{
                 position: "absolute",
-                width: "auto",
-                height: "auto",
                 backgroundColor: "#020618",
                 borderRadius: "0px",
                 borderWidth: "0px",
                 borderStyle: "solid",
                 borderColor: "#020618",
-                overflow: "visible",
+                overflow: "hidden",
                 transform: "scale(1)",
               }}
               exit="leave"
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 2 }}
             >
-              <motion.div
+              {/* <motion.div
                 initial={{ display: "none" }}
                 variants={{ leave: { display: "block" } }}
                 className="absolute bottom-10 w-full h-full bg-[#cccdd0] rounded-full opacity-50 z-25"
-              />
+              /> */}
               <motion.div
                 variants={{ leave: { opacity: 0 } }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
+                className="rounded-lg flex flex-col justify-center items-center w-full h-full p-3"
               >
                 <label htmlFor="name" className="mb-3">
                   Name
@@ -256,7 +262,7 @@ function Contact() {
                   type="submit"
                   disabled={pending}
                   className={`relative overflow-hidden text-white
-           w-40 h-10 rounded-md ${
+           w-40 h-15 rounded-md ${
              pending ? "cursor-not-allowed opacity-50" : "cursor-pointer"
            }`}
                 >
