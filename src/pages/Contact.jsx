@@ -17,27 +17,28 @@ for (let i = 0; i < 20; i++) {
 
 function Contact() {
   const [sent, setSent] = useState(false);
-  const [dimensions, setDimensions] = useState();
+  const [phoneError, setPhoneError] = useState(false);
+  const [sentFailed, setSentFailed] = useState(false);
   const formRef = useRef();
+  const phoneRef = useRef();
 
   async function emailAction(prevFormData, formData) {
-    // console.log(formRef.current.offsetWidth + " " + formRef.current.offsetHeight)
-    // setDimensions([formRef.current.offsetWidth, formRef.current.offsetHeight]);
-    setSent(true);
+    setSentFailed(false);
+
     const email = formData.get("email");
     const name = formData.get("name");
     const message = formData.get("message");
     const phone = formData.get("phone");
     const company = formData.get("company");
 
-    const errors = [];
+    let errors = false;
 
     if (phone && !isPhone(phone)) {
-      errors.push("Please enter a valid phone number.");
+      errors = true;
+      setPhoneError(true);
     }
 
-    if (errors.length > 0) {
-      return {
+    const filledObj = {
         errors,
         enteredValues: {
           email,
@@ -47,13 +48,17 @@ function Contact() {
           company,
         },
       };
+
+    if (errors) {
+      return filledObj;
     }
 
     try {
       const data = await sendEmail();
-      console.log("I am in try");
+      setSent(true);
     } catch (error) {
-      console.log("I am in error");
+      setSentFailed(true);
+      return filledObj;
     }
 
     return { errors: null };
@@ -90,8 +95,18 @@ function Contact() {
     errors: null,
   });
 
+  function handlePhoneChange() {
+    setPhoneError(false);
+  }
+
   return (
-    <div className="mt-30 w-full flex flex-col justify-center items-center reg-instrument-sans">
+    <motion.div
+      initial={{ y: -40, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="relative mt-30 w-full flex flex-col justify-center items-center reg-instrument-sans"
+    >
       <SectionHeader>CONTACT ME</SectionHeader>
       <h3 className="bold-instrument-sans text-3xl lg:text-4xl tracking-widest">
         WANT TO COLLABORATE? <br /> LET'S GET IN TOUCH!
@@ -114,7 +129,7 @@ function Contact() {
                   transform: "rotate(90deg) scale(0.9)",
                   position: "absolute",
                   width: "10rem",
-                  height:"10rem",
+                  height: "10rem",
                   backgroundColor: "#c0c1c4",
                   borderRadius: "9999px",
                   borderWidth: "2px",
@@ -128,7 +143,7 @@ function Contact() {
               key={"form"}
               action={formAction}
               ref={formRef}
-              className="flex flex-col w-full md:w-auto items-center md:aspect-square justify-center shrink z-20"
+              className="flex flex-col w-full h-auto md:w-auto md:h-185 items-center md:aspect-square justify-center shrink z-20"
               initial={{
                 position: "absolute",
                 backgroundColor: "#020618",
@@ -200,6 +215,8 @@ function Contact() {
                   Phone Number (optional)
                 </label>
                 <input
+                  ref={phoneRef}
+                  onChange={handlePhoneChange}
                   id="phone"
                   type="tel"
                   name="phone"
@@ -210,6 +227,11 @@ function Contact() {
           text-center mb-3 focus:outline-none`}
                   defaultValue={formState.enteredValues?.phone}
                 />
+                {phoneError && (
+                  <p className="text-red-400">
+                    Please enter a valid phone number
+                  </p>
+                )}
                 <label htmlFor="phone" className="mb-3">
                   Message
                 </label>
@@ -218,7 +240,7 @@ function Contact() {
                   type="text"
                   name="message"
                   required
-                  className={`block w-full md:w-150 h-50 p-2 bg-[#010412] rounded-md border-1 
+                  className={`block w-full md:w-150 h-50 resize-none p-2 bg-[#010412] rounded-md border-1 
           border-white/50 focus:border-[#3698d5]/50 
           focus:shadow-sm focus:shadow-[#3698d5] 
           text-left mb-3 focus:outline-none`}
@@ -268,12 +290,18 @@ function Contact() {
                 >
                   <span>{pending ? "Sending..." : "Send Message"}</span>
                 </motion.button>{" "}
+                {sentFailed && (
+                  <p className="text-red-400 mt-3">
+                    <span className="hidden md:inline">Hmm... </span>Looks like something went wrong. <span className="hidden md:inline">Please try again
+                    later.</span>
+                  </p>
+                )}
               </motion.div>
             </motion.form>
           )}
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
