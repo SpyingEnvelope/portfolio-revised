@@ -176,8 +176,6 @@ function Contact() {
                   leave: {
                     opacity: 0,
                     scale: 0,
-                    height: "100%",
-                    width: "100%",
                     borderRadius: "9999px",
                     borderWidth: "1px",
                     borderColor: "#a1a5aa",
