@@ -1,15 +1,11 @@
 /* This is the footer component to be displayed at the bottom of the page. It should include a copyright
 and potentially some other links.*/
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
 function Footer() {
     const footerRef = useRef();
     const footerInView = useInView(footerRef);
-
-    useEffect(() => {
-        console.log("user is in view " + footerInView);
-    }, [footerInView])
 
   return (
     <motion.footer
