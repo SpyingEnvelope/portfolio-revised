@@ -65,30 +65,25 @@ function Contact() {
   }
 
   function sendEmail() {
-    return new Promise((resolve, reject) =>
-      setTimeout(() => {
-        console.log("operation rejected");
-        resolve("nice");
-      }, 1000)
-    );
-    /* This commented line works for sending emails. Please test states
-    that imitate sending emails to avoid using tokens.*/
+    /* The commented lines before imitate a server for testing purposes. 
+    Please keep it here for testing usage*/
 
-    // emailjs
-    //   .sendForm(
-    //     import.meta.env.VITE_PUBLIC_SERVICE,
-    //     import.meta.env.VITE_TEMPLATE_ID,
-    //     formRef.current,
-    //     { publicKey: import.meta.env.VITE_PUBLIC_KEY }
-    //   )
-    //   .then(
-    //     () => {
-    //       console.log("EMAIL SENT SUCESSFULLY");
-    //     },
-    //     (error) => {
-    //       console.log("EMAIL FAILED... " + error.text);
-    //     }
-    //   );
+    // return new Promise((resolve, reject) =>
+    //   setTimeout(() => {
+    //     console.log("operation rejected");
+    //     resolve("nice");
+    //   }, 1000)
+    // );
+
+    /* The lines below are the ones that actually send out emails. Comment them out if
+    you would like to test animations. */
+
+    return emailjs.sendForm(
+      import.meta.env.VITE_PUBLIC_SERVICE,
+      import.meta.env.VITE_TEMPLATE_ID,
+      formRef.current,
+      { publicKey: import.meta.env.VITE_PUBLIC_KEY }
+    );
   }
 
   const [formState, formAction, pending] = useActionState(emailAction, {
@@ -181,8 +176,7 @@ function Contact() {
                     borderColor: "#a1a5aa",
                     backgroundColor: "#020618",
                     rotate: "90deg",
-                    aspectRatio: "1 / 1",
-                    overflow: "hidden"
+                    overflow: "hidden",
                   },
                 }}
                 transition={{ duration: 2 }}
@@ -196,7 +190,7 @@ function Contact() {
                   type="text"
                   name="name"
                   autoComplete="name"
-                  className={`block w-full h-10 md:w-130 rounded-md border-1 
+                  className={`block w-full h-10 md:w-130 bg-[#010412] rounded-md border-1 
           border-white/50 focus:border-[#3698d5]/50 
           focus:shadow-sm focus:shadow-[#3698d5] 
           text-center mb-3 focus:outline-none`}
