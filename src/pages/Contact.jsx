@@ -39,15 +39,15 @@ function Contact() {
     }
 
     const filledObj = {
-        errors,
-        enteredValues: {
-          email,
-          name,
-          message,
-          phone,
-          company,
-        },
-      };
+      errors,
+      enteredValues: {
+        email,
+        name,
+        message,
+        phone,
+        company,
+      },
+    };
 
     if (errors) {
       return filledObj;
@@ -163,8 +163,31 @@ function Contact() {
                 className="absolute bottom-10 w-full h-full bg-[#cccdd0] rounded-full opacity-50 z-25"
               /> */}
               <motion.div
-                variants={{ leave: { opacity: 0 } }}
-                transition={{ duration: 0.5 }}
+                initial={{
+                  scale: 1,
+                  opacity: 1,
+                  borderRadius: "0px",
+                  borderWidth: "0px",
+                  borderStyle: "solid",
+                  borderColor: "#020618",
+                  backgroundColor: "#020618",
+                }}
+                variants={{
+                  leave: {
+                    opacity: 0,
+                    scale: 0,
+                    height: "100%",
+                    width: "100%",
+                    borderRadius: "9999px",
+                    borderWidth: "1px",
+                    borderColor: "#a1a5aa",
+                    backgroundColor: "#020618",
+                    rotate: "90deg",
+                    aspectRatio: "1 / 1",
+                    overflow: "hidden"
+                  },
+                }}
+                transition={{ duration: 2 }}
                 className="rounded-lg flex flex-col justify-center items-center w-full h-full p-3"
               >
                 <label htmlFor="name" className="mb-3">
@@ -175,7 +198,7 @@ function Contact() {
                   type="text"
                   name="name"
                   autoComplete="name"
-                  className={`block w-full h-10 md:w-130 bg-[#010412] rounded-md border-1 
+                  className={`block w-full h-10 md:w-130 rounded-md border-1 
           border-white/50 focus:border-[#3698d5]/50 
           focus:shadow-sm focus:shadow-[#3698d5] 
           text-center mb-3 focus:outline-none`}
@@ -292,8 +315,11 @@ function Contact() {
                 </motion.button>{" "}
                 {sentFailed && (
                   <p className="text-red-400 mt-3">
-                    <span className="hidden md:inline">Hmm... </span>Looks like something went wrong. <span className="hidden md:inline">Please try again
-                    later.</span>
+                    <span className="hidden md:inline">Hmm... </span>Looks like
+                    something went wrong.{" "}
+                    <span className="hidden md:inline">
+                      Please try again later.
+                    </span>
                   </p>
                 )}
               </motion.div>
