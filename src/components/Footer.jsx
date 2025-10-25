@@ -26,7 +26,6 @@ function Footer() {
         opacity-85`}
             style={{ boxShadow: "0 0 10px 10px rgba(255, 255, 255, 0.5)" }}
           >
-            {/* <p>&#169; 2025 Gad Cooper. All Rights Reserved.</p> */}
           </motion.div>
         )}
         {footerInView && (
