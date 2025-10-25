@@ -10,32 +10,40 @@ function Footer() {
 
   return (
     <motion.footer id="footer" className="mt-30" ref={footerRef}>
-      <motion.div
-
-        className="w-[500%] h-40 absolute overflow-hidden left-0"
-      >
+      <motion.div className="w-[100%] h-40 absolute overflow-hidden left-0">
         {footerInView && (
           <motion.div
-            initial={{ y: 80}}
-            animate={{y: 0}}
+            initial={{ y: 80 }}
+            animate={{ y: 0 }}
+            whileInView={{}}
             transition={{
-              duration: 0.5,
+              duration: 0.3,
               ease: "easeOut",
             }}
-            className={`absolute -left-[40%] top-5 w-full 
-        aspect-square bg-gradient-to-t from-[#396dbf] lg:from-99% sm:from-99% 
+            className={`absolute -left-[75%] top-5 w-[250%] 
+        aspect-square bg-gradient-to-t from-[#396dbf] lg:from-98% sm:from-99% 
         from-98% to-[#b6b8ba] lg:to-100% sm:to-100% to-100% rounded-t-full
         opacity-85`}
-            style={{ boxShadow: "0 0 10px 10px rgba(235, 172, 96, 0.5)" }}
+            style={{ boxShadow: "0 0 10px 10px rgba(255, 255, 255, 0.5)" }}
           >
             {/* <p>&#169; 2025 Gad Cooper. All Rights Reserved.</p> */}
           </motion.div>
         )}
-        <div className="w-screen flex justify-center relative top-25">
-          <div className="relative xl:w-[1280px] w-full h-10 ml-10">
-            <SocialMedia />
-          </div>
-        </div>
+        {footerInView && (
+          <motion.div
+            initial={{ y: 80 }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+            }}
+            className="w-screen flex justify-center relative top-25"
+          >
+            <div className="relative xl:w-[1280px] w-full h-10 ml-10 flex justify-center right-6 bottom-8">
+              <SocialMedia />
+            </div>
+          </motion.div>
+        )}
       </motion.div>
     </motion.footer>
   );
