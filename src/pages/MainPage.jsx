@@ -26,7 +26,7 @@ function MainPage() {
       <main>
         <Header />
         <Projects />
-        <About />
+        <About screenWidth={screenWidth} />
         <Contact />
       </main>
       <Footer screenWidth={screenWidth} />

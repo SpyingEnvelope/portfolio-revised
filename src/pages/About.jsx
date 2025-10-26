@@ -1,7 +1,6 @@
 /* This is the about me section of the website. It is displayed under the
 projects section. It includes an in-depth level of detail about who I am,
 the languages I worked with, and the technologies I am familiar with.*/
-import { useEffect, useState } from "react";
 import AboutRow from "@/components/AboutRow";
 import SectionHeader from "@/components/SectionHeader";
 import EducationCard from "@/components/EducationCard";
@@ -26,28 +25,18 @@ import { PythonOriginal } from "devicons-react";
 
 /* The function exported as a component. 
 PROPS: None */
-function About() {
+function About({ screenWidth }) {
   // This state is used to decide on whether or not cards should use dynamic scaling
-  const [mobileSizing, setMobileSizing] = useState(false);
+  let mobileSizing = false;
 
   /* The dynamic scaling is only neccessary on mobile screens. 
     useEffect is utilized here to first set mobileSizing to true if
     the screen is already mobile. Otherwise, it sets it on window resizes.
     This is important, as elements would otherwise not resize properly
     when users resize their screens, such as when they change the orientations of their phones. */
-  useEffect(() => {
-    if (window.innerWidth < 451) {
-      setMobileSizing(true);
+    if (screenWidth < 451) {
+      mobileSizing = true;
     }
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth < 451) {
-        setMobileSizing(true);
-      } else {
-        setMobileSizing(false);
-      }
-    });
-  }, []);
 
   return (
     <div id="about" className="mt-30">
