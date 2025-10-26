@@ -68,22 +68,22 @@ function Contact() {
     /* The commented lines before imitate a server for testing purposes. 
     Please keep it here for testing usage*/
 
-    // return new Promise((resolve, reject) =>
-    //   setTimeout(() => {
-    //     console.log("operation rejected");
-    //     resolve("nice");
-    //   }, 1000)
-    // );
+    return new Promise((resolve, reject) =>
+      setTimeout(() => {
+        console.log("operation rejected");
+        resolve("nice");
+      }, 1000)
+    );
 
     /* The lines below are the ones that actually send out emails. Comment them out if
     you would like to test animations. */
 
-    return emailjs.sendForm(
-      import.meta.env.VITE_PUBLIC_SERVICE,
-      import.meta.env.VITE_TEMPLATE_ID,
-      formRef.current,
-      { publicKey: import.meta.env.VITE_PUBLIC_KEY }
-    );
+    // return emailjs.sendForm(
+    //   import.meta.env.VITE_PUBLIC_SERVICE,
+    //   import.meta.env.VITE_TEMPLATE_ID,
+    //   formRef.current,
+    //   { publicKey: import.meta.env.VITE_PUBLIC_KEY }
+    // );
   }
 
   const [formState, formAction, pending] = useActionState(emailAction, {

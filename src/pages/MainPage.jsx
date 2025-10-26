@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
+
 import Navigation from "../components/Navigation";
-import IndexPage from "./IndexPage";
 import About from "./About";
 import Footer from "../components/Footer";
 import Projects from "./Projects";
@@ -10,6 +11,14 @@ import Contact from "./Contact";
 and pages will be displayed here.*/
 
 function MainPage() {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+    window.addEventListener("resize", () => {
+      setScreenWidth(window.innerWidth);
+    });
+  }, []);
+
   return (
     <>
       <div className="h-10" id="home" />
@@ -19,9 +28,8 @@ function MainPage() {
         <Projects />
         <About />
         <Contact />
-        {/* <IndexPage /> */}
       </main>
-      <Footer />
+      <Footer screenWidth={screenWidth} />
     </>
   );
 }

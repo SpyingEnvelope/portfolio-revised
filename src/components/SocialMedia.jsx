@@ -13,7 +13,7 @@ function SocialMedia() {
         <a target="_blank" href="https://github.com/spyingEnvelope/">
           <TbBrandGithubFilled />
         </a>
-        <a target="_blank" href="https://github.com/spyingEnvelope/" className="hover:text-[#3698d5]">
+        <a target="_blank" href="mailto:gad.cooper@shaw.ca" className="hover:text-[#3698d5]">
           <MdEmail />
         </a>
       </div>
