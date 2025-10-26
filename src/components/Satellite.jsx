@@ -1,5 +1,9 @@
+/* Import statement for motion, used to animate the red light and the signals */
 import { motion } from "motion/react";
 
+/* This component draws the small satellite that orbits the planet at the bottom of the web application.
+
+PROPS: None */
 function Satellite() {
   return (
     <div className="w-20 h-10 relative left-20 rotate-45 scale-80">

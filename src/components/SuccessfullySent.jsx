@@ -1,6 +1,11 @@
+/* Motion for React is used to animate the Moon's movement */
 import { motion } from "motion/react";
 
-function SuccessfullySent({ width, height }) {
+/* This component displays a moon with the message "Message Sent!". 
+It is displayed upon an email being sent successfully. 
+
+PROPS: None */
+function SuccessfullySent() {
   return (
     <motion.div
       initial={{ y: -28, opacity: 0 }}

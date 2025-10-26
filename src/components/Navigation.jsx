@@ -76,15 +76,15 @@ function Navigation() {
                 <NavigationMenuLink href="#home">Home</NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="#about">About</NavigationMenuLink>
+                <NavigationMenuLink href="#projects">Projects</NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="#projects">
-                  Projects
+                <NavigationMenuLink href="#about">
+                  About
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="#footer">Contact</NavigationMenuLink>
+                <NavigationMenuLink href="#contact">Contact</NavigationMenuLink>
               </NavigationMenuItem>
             </div>
           </NavigationMenuList>

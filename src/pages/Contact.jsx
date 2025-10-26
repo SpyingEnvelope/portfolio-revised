@@ -5,8 +5,11 @@ import emailjs from "@emailjs/browser";
 import SectionHeader from "@/components/SectionHeader";
 import SuccessfullySent from "@/components/SuccessfullySent";
 
+/* This array is used to represent keyFrames for a smooth transition between the 
+motion.form component and the SuccessfullySent component. */
 const keyStrokes = [];
 
+/* This for loop is used to populate the keyStrokes array used for keyframes. */
 for (let i = 0; i < 20; i++) {
   if (i == 19) {
     keyStrokes.push(0);
@@ -15,28 +18,52 @@ for (let i = 0; i < 20; i++) {
   }
 }
 
+/* This component displays the contact form section. 
+PROPS: None */
 function Contact() {
+  /* The sent state is used to decide on if SucessfullySent should be rendered or if
+  motion.div should be rendered. */
   const [sent, setSent] = useState(false);
+
+  /* the phoneError state is used to display an error message when a 
+  phone number with letters is entered. All other important cases are covered by
+  HTML5 */
   const [phoneError, setPhoneError] = useState(false);
+
+  /* the sentFailed state is used to show an error message if the email failed to
+  send for some reason. */
   const [sentFailed, setSentFailed] = useState(false);
+
+  /* A ref used to access the current data in the form. */
   const formRef = useRef();
+
+  /* phoneRef is used to access the phone section of the form */
   const phoneRef = useRef();
 
+  /* This is the function that fires upon form submission. It is used
+  to authenticate the information entered and trigger the sendEmail function. */
   async function emailAction(prevFormData, formData) {
+    /* setting the sentFailed state to false, as a re-send is being attempted. */
     setSentFailed(false);
 
+    /* Collecting all the data from the form. These are all used to be
+    returned to the form in case of a failed send or authentication. */
     const email = formData.get("email");
     const name = formData.get("name");
     const message = formData.get("message");
     const phone = formData.get("phone");
     const company = formData.get("company");
 
+    /* The errors variable is used to detect errors in data entered. */
     let errors = false;
 
     if (phone && !isPhone(phone)) {
       errors = true;
       setPhoneError(true);
     }
+
+    /* This object contains all the data necessary to re-populate the form in case of an 
+    error. */
 
     const filledObj = {
       errors,
@@ -49,10 +76,13 @@ function Contact() {
       },
     };
 
+    /* Returned the data object if an error was encountered. */
     if (errors) {
       return filledObj;
     }
 
+    /* Trigger the sendEmail function to send the email via EmailJS. If email sending fails,
+    return the object needed to re-populate the form and display an error. */
     try {
       const data = await sendEmail();
       setSent(true);
@@ -61,9 +91,14 @@ function Contact() {
       return filledObj;
     }
 
+    /* If everything executed properly, ensure the errors object is null to indicate
+    no errors were encountered. */
     return { errors: null };
   }
 
+  /* The sendEmail function. The commented lines are used for testing purposes, as they imitate
+  the process of communicating with the EmailJS API. Please uncomment them to perform
+  further tests and to avoid burdering the EmailJS API unnecessarily. */
   function sendEmail() {
     /* The commented lines before imitate a server for testing purposes. 
     Please keep it here for testing usage*/
@@ -86,16 +121,21 @@ function Contact() {
     // );
   }
 
+  /* form actions used to send data from the form and display appropriate information
+  as the form is being sent to EmailJS */
   const [formState, formAction, pending] = useActionState(emailAction, {
     errors: null,
   });
 
+  /* Set the phoneError state to false if the user attempts to correct
+  a previous error made when entering a phone number */
   function handlePhoneChange() {
     setPhoneError(false);
   }
 
   return (
     <motion.div
+      id="contact"
       initial={{ y: -40, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -152,11 +192,6 @@ function Contact() {
               exit="leave"
               transition={{ duration: 2 }}
             >
-              {/* <motion.div
-                initial={{ display: "none" }}
-                variants={{ leave: { display: "block" } }}
-                className="absolute bottom-10 w-full h-full bg-[#cccdd0] rounded-full opacity-50 z-25"
-              /> */}
               <motion.div
                 initial={{
                   scale: 1,

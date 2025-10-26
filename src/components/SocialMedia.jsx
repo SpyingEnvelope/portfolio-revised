@@ -1,7 +1,10 @@
+/* Logo imports to be displayed */
 import { BiLogoLinkedin } from "react-icons/bi";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { MdEmail } from "react-icons/md";
 
+/* This component displays the social media links in the footer of the web application
+PROPS: None */
 function SocialMedia() {
   return (
     <div className="flex flex-col items-center reg-instrument-sans text-xl space-y-2">
