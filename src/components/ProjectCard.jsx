@@ -13,6 +13,7 @@ PROPS:
   icon: REACTNODE the icon to display inside of the logo
   image: REACT IMAGE IMPORT the image to display inside the logo
   url: STRING the url to open when the card is clicked
+  screenWidth: INTEGER the current size of the window, passed from MainPage.jsx.
 */
 function ProjectCard({ children, title, links, icon, image, screenWidth }) {
   // Used to deal with sizing the card on mobile devices

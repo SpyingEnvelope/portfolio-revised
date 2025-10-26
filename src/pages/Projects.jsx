@@ -88,7 +88,7 @@ const projects = [
 /* The return statement for the JSX code
 
 PROPS:
-screenWidth: INTEGER the current size of the window, pass from MainPage.jsx.
+screenWidth: INTEGER the current size of the window, passed from MainPage.jsx.
 */
 
 function Projects({ screenWidth }) {
