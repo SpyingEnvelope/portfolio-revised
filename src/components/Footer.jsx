@@ -1,6 +1,6 @@
 /* This is the footer component to be displayed at the bottom of the page. It should include a copyright
 and potentially some other links.*/
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import SocialMedia from "./SocialMedia";
 import Satellite from "./Satellite";
@@ -8,21 +8,19 @@ import Satellite from "./Satellite";
 function Footer({ screenWidth }) {
   const footerRef = useRef();
   const footerInView = useInView(footerRef);
-  const [spinDuration, setSpinDuration] = useState(6);
+  let spinDuration = 6;
 
-  useEffect(() => {
-    if (screenWidth < 440) {
-      setSpinDuration(6);
-    } else if (screenWidth < 768) {
-      setSpinDuration(8);
-    } else if (screenWidth < 1024) {
-      setSpinDuration(10);
-    } else if (screenWidth < 1280) {
-      setSpinDuration(12);
-    } else {
-      setSpinDuration(15);
-    }
-  }, [screenWidth]);
+  if (screenWidth < 440) {
+    spinDuration = 6;
+  } else if (screenWidth < 768) {
+    spinDuration = 8;
+  } else if (screenWidth < 1024) {
+    spinDuration = 10;
+  } else if (screenWidth < 1280) {
+    spinDuration = 12;
+  } else {
+    spinDuration = 15;
+  }
 
   return (
     <motion.footer id="footer" className="mt-30" ref={footerRef}>
