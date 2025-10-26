@@ -1,5 +1,4 @@
 /* This component displays a card for different projects */
-import { useEffect, useState} from "react";
 import { motion } from "motion/react";
 
 import starArray from "../utils/starUtils";
@@ -15,38 +14,20 @@ PROPS:
   image: REACT IMAGE IMPORT the image to display inside the logo
   url: STRING the url to open when the card is clicked
 */
-function ProjectCard({ children, title, links, icon, image }) {
-
+function ProjectCard({ children, title, links, icon, image, screenWidth }) {
   // Used to deal with sizing the card on mobile devices
-  const [mobileSize, setMobileSize] = useState("w-[392px] h-[372px]");
-  const [singleView, setSingleView] = useState(false);
+  let mobileSize = "w-[392px] h-[372px]";
+  let singleView = false;
 
-  /* This useEffect executes once. First, it sets the mobile size to auto if
-  a mobile screen size is detected. It also adds a listener event to the window
-  to make size adjustments for mobile devices if a window is resized. */
-  useEffect(() => {
-    if (window.innerWidth < 451) {
-      setMobileSize("w-full h-auto");
-    }
+  /* Conditional statements to adjust the size of the project cards according
+  to the screen size */
+  if (screenWidth < 451) {
+    mobileSize = "w-full h-auto";
+  }
 
-    if (window.innerWidth < 872) {
-      setSingleView(true);
-    }
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth < 451) {
-        setMobileSize("w-full h-auto");
-      } else {
-        setMobileSize("w-[392px] h-[372px]");
-      }
-
-      if (window.innerWidth < 872) {
-        setSingleView(true);
-      } else {
-        setSingleView(false);
-      }
-    });
-  }, []);
+  if (screenWidth < 872) {
+    singleView = true;
+  }
 
   // An array of <li> elements to display in the links section of the card
   let linksDisplay = [];
@@ -79,13 +60,13 @@ function ProjectCard({ children, title, links, icon, image }) {
       initial="entry"
       whileHover="hover"
       whileInView={singleView ? "hover" : null}
-      viewport={{amount: 0.9}}
+      viewport={{ amount: 0.9 }}
       transition={{ duration: 0.4 }}
     >
       <div className="absolute w-full h-full overflow-hidden">
         <motion.div
-          variants={{ entry: { y: -400 }, hover: {y: 0} }}
-          transition={{type: "tween", duration: 0.4}}
+          variants={{ entry: { y: -400 }, hover: { y: 0 } }}
+          transition={{ type: "tween", duration: 0.4 }}
           className={`absolute w-full h-full`}
         >
           {starArray}

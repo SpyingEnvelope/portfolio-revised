@@ -11,21 +11,27 @@ import Contact from "./Contact";
 and pages will be displayed here.*/
 
 function MainPage() {
+  /* useState it utilized here to re-render the application to fit different screen sizes.
+  As the most heavy components of the app require a re-size when the screen width changes,
+  this is more efficient than using useContext. */
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
+  /* useEffect executes once when this component renders to attach a listener to the window.
+  If a window is resized, the screenWidth state gets updated, resulting a re-render of the application. */
     useEffect(() => {
     window.addEventListener("resize", () => {
       setScreenWidth(window.innerWidth);
     });
   }, []);
 
+  /* The return statement that displays the entire application */
   return (
     <>
       <div className="h-10" id="home" />
       <Navigation />
       <main>
         <Header />
-        <Projects />
+        <Projects screenWidth={screenWidth} />
         <About screenWidth={screenWidth} />
         <Contact />
       </main>

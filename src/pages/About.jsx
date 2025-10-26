@@ -24,15 +24,16 @@ import { PythonOriginal } from "devicons-react";
 
 
 /* The function exported as a component. 
-PROPS: None */
+PROPS:
+screenWidth: INTEGER the current size of the window, passed from MainPage.jsx */
 function About({ screenWidth }) {
-  // This state is used to decide on whether or not cards should use dynamic scaling
+  // This is used to decide on whether or not cards should use dynamic scaling
   let mobileSizing = false;
 
   /* The dynamic scaling is only neccessary on mobile screens. 
-    useEffect is utilized here to first set mobileSizing to true if
-    the screen is already mobile. Otherwise, it sets it on window resizes.
-    This is important, as elements would otherwise not resize properly
+    This conditional statement here is used to properly adjust the about me section for
+    mobile screens, as the breakpoints provided by Tailwind did not properly fit the size
+    of each AboutRow component. This is important, as elements would otherwise not resize properly
     when users resize their screens, such as when they change the orientations of their phones. */
     if (screenWidth < 451) {
       mobileSizing = true;

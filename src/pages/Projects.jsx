@@ -87,10 +87,11 @@ const projects = [
 
 /* The return statement for the JSX code
 
-PROPS: None
+PROPS:
+screenWidth: INTEGER the current size of the window, pass from MainPage.jsx.
 */
 
-function Projects() {
+function Projects({ screenWidth }) {
   return (
     <div
       id="projects"
@@ -122,6 +123,7 @@ function Projects() {
               image={project.image}
               icon={project.icon}
               links={project.links}
+              screenWidth={screenWidth}
             >
               {project.para}
             </ProjectCard>
