@@ -12,17 +12,21 @@ function Star({ x, y, delay }) {
     <motion.div
       className={`absolute text-white w-1 h-1 aspect-square rounded-full scale-10`}
       style={{ top: y, left: x }}
-      initial={{ opacity: 0.3 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        repeat: Infinity,
-        duration: 0.5,
-        repeatType: "reverse",
-        delay: delay,
-        repeatDelay: 2,
-        ease: "linear"
+      initial={{ opacity: 1 }}
+      whileInView={{
+        opacity: 0.3,
+        transition: {
+          repeat: Infinity,
+          duration: 0.5,
+          repeatType: "reverse",
+          delay: delay,
+          repeatDelay: 2,
+          ease: "linear",
+        },
       }}
-    >&#9733;</motion.div>
+    >
+      &#9733;
+    </motion.div>
   );
 }
 

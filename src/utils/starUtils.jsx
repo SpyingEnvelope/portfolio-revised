@@ -1,5 +1,4 @@
 /* This utility file outputs a star array to be used in each card */
-
 import Star from "@/components/Star";
 
 const starArray = [];
