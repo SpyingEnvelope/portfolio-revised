@@ -43,6 +43,12 @@ function Navigation({ screenWidth }) {
     }
   };
 
+  /* This function scrolls to the top of the page when the logo is clicked */
+  function handleImageClick(event) {
+    event.preventDefault();
+    window.scrollTo(0, 0);
+  }
+
   /* The JSX component returned needed to use CSS flex to adjust to screen sizes easily. The justify-end
   div is used to display the logo while every other menu items is using justify-start. REMOVE MAX-WIDTH, xl:left-auto for the nav tag
   and set w-screen for the logo div to return to the previous settings */
@@ -54,7 +60,7 @@ function Navigation({ screenWidth }) {
         className={`fixed top-0 left-0 xl:left-auto w-full flex ${logoVisibility == "invisible" ? "justify-center" : "justify-start"} h-15 items-center z-31 max-w-[1220px]`}
       >
         <div className={`flex justify-end flex-row w-full absolute right-5 ${logoVisibility}`}>
-          <a href="#top">
+          <a onClick={handleImageClick} className="cursor-pointer">
             <img src={logo} width={70} />
           </a>
         </div>
