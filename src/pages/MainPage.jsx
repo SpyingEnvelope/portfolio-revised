@@ -28,7 +28,7 @@ function MainPage() {
   return (
     <>
       <div className="h-10" id="home" />
-      <Navigation />
+      <Navigation screenWidth={screenWidth} />
       <main>
         <Header />
         <Projects screenWidth={screenWidth} />

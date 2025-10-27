@@ -14,7 +14,7 @@ function starCoordinates() {
       Math.floor(Math.random() * 100) + "%",
       Math.floor(Math.random() * 100) + "%",
       i,
-      delayStart + i * 0.1,
+      delayStart + i * 0.03,
     ]);
   }
 

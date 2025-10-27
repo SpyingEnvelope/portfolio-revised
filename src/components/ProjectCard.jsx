@@ -14,8 +14,9 @@ PROPS:
   image: REACT IMAGE IMPORT the image to display inside the logo
   url: STRING the url to open when the card is clicked
   screenWidth: INTEGER the current size of the window, passed from MainPage.jsx.
+  dimensions: STRING the Tailwind class name to use for sizing the image of the logo
 */
-function ProjectCard({ children, title, links, icon, image, screenWidth }) {
+function ProjectCard({ children, title, links, icon, image, dimensions, screenWidth }) {
   // Used to deal with sizing the card on mobile devices
   let mobileSize = "w-[392px] h-[372px]";
   let singleView = false;
@@ -74,7 +75,7 @@ function ProjectCard({ children, title, links, icon, image, screenWidth }) {
         </motion.div>
       </div>
       <div className="relative left-5 bottom-10">
-        <ProjectLogo icon={icon} image={image} />
+        <ProjectLogo icon={icon} image={image} dimensions={dimensions} />
       </div>
       <h3 className="relative bottom-5 bold-instrument-sans text-3xl font-bold ml-5">
         {title}

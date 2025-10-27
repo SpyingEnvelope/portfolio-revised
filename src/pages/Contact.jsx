@@ -37,9 +37,6 @@ function Contact() {
   /* A ref used to access the current data in the form. */
   const formRef = useRef();
 
-  /* phoneRef is used to access the phone section of the form */
-  const phoneRef = useRef();
-
   /* This is the function that fires upon form submission. It is used
   to authenticate the information entered and trigger the sendEmail function. */
   async function emailAction(prevFormData, formData) {
@@ -103,22 +100,22 @@ function Contact() {
     /* The commented lines before imitate a server for testing purposes. 
     Please keep it here for testing usage*/
 
-    return new Promise((resolve, reject) =>
-      setTimeout(() => {
-        console.log("operation rejected");
-        resolve("nice");
-      }, 1000)
-    );
+    // return new Promise((resolve, reject) =>
+    //   setTimeout(() => {
+    //     console.log("operation rejected");
+    //     resolve("nice");
+    //   }, 1000)
+    // );
 
     /* The lines below are the ones that actually send out emails. Comment them out if
     you would like to test animations. */
 
-    // return emailjs.sendForm(
-    //   import.meta.env.VITE_PUBLIC_SERVICE,
-    //   import.meta.env.VITE_TEMPLATE_ID,
-    //   formRef.current,
-    //   { publicKey: import.meta.env.VITE_PUBLIC_KEY }
-    // );
+    return emailjs.sendForm(
+      import.meta.env.VITE_PUBLIC_SERVICE,
+      import.meta.env.VITE_TEMPLATE_ID,
+      formRef.current,
+      { publicKey: import.meta.env.VITE_PUBLIC_KEY }
+    );
   }
 
   /* form actions used to send data from the form and display appropriate information
@@ -265,7 +262,6 @@ function Contact() {
                   Phone Number (optional)
                 </label>
                 <input
-                  ref={phoneRef}
                   onChange={handlePhoneChange}
                   id="phone"
                   type="tel"

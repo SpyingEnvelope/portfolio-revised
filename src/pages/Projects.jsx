@@ -4,7 +4,7 @@ import ProjectCard from "@/components/ProjectCard";
 import SectionHeader from "@/components/SectionHeader";
 import reactiveLogo from "/reactive-logo.png";
 import fsLogo from "/logo-fs-web.png"
-import profile from "/vite.svg";
+import profile from "/projectlogo.png";
 import { GiTalk } from "react-icons/gi";
 import { PiCheckerboardDuotone } from "react-icons/pi";
 
@@ -14,15 +14,17 @@ import { PiCheckerboardDuotone } from "react-icons/pi";
   para: STRING what is written inside of the card
   image: REACT IMAGE IMPORT the image used to display. Displays if icon does not exist 
   icon: REACTNODE the icon to display if an image is not used
-  links: ARRAY OF OBJECTS each object in the array has two properties: href and text.
+  links: ARRAY OF OBJECTS each object in the array has five to six properties: href and text.
          href: STRING the url to go to when clicking the link/anchor tag
          text: STRING the text to write inside the anchor tag
+  dimensions: STRING the classname for the dimensions to use for the image. OPTIONAL
+              This will default to w-[50px] h-[50px] if not set.
   */
 const projects = [
   {
     title: "Reactive Chat",
     para: `An AAC software built with React, JavaScript, Express, and MongoDB to assist individuals with verbal challenges. Users can create personalized pages, while authentication and secure data handling are managed through the Express server for a safe, tailored communication experience.`,
-    image: reactiveLogo,
+    image: reactiveLogo, 
     icon: false,
     links: [
       {
@@ -51,6 +53,7 @@ const projects = [
     title: "Revised Portfolio",
     para: `My current portfolio website, built with React and JavaScript. It features a modern, unique interface. Motion for React powers dynamic, nested animations, while React Router manages navigation and invalid URLs to ensure users can easily access the right sections.`,
     image: profile,
+    dimensions: "h-[75px] w-[75px]",
     icon: false,
     links: [
       {
@@ -124,6 +127,7 @@ function Projects({ screenWidth }) {
               icon={project.icon}
               links={project.links}
               screenWidth={screenWidth}
+              dimensions={project.dimensions}
             >
               {project.para}
             </ProjectCard>

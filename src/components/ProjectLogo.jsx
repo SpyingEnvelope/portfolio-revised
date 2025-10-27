@@ -5,8 +5,10 @@ import { motion } from "motion/react";
 /* The component itself that is exported. Used in ProjectCard.jsx
 PROPS:
     icon: REACTNODE the icon to display as the logo
-    image: REACT IMAGE IMPORT the image to display if an icon is not provided. */
-function ProjectLogo({ icon, image }) {
+    image: REACT IMAGE IMPORT the image to display if an icon is not provided.
+    dimensions: STRING the Tailwind class name used for sizing an image. OPTIONAL
+                This will default to w-[50px] h-[50px] if not set. */
+function ProjectLogo({ icon, image, dimensions }) {
   return (
     <motion.div
       variants={{
@@ -25,7 +27,7 @@ function ProjectLogo({ icon, image }) {
           {icon}
         </motion.div>
       ) : (
-        <img src={image} className="h-[50px] w-[50px]" />
+        <img src={image} className={dimensions ?? "h-[50px] w-[50px]"} />
       )}
     </motion.div>
   );

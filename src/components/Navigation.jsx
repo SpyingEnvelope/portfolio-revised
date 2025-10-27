@@ -2,7 +2,7 @@
 should include links to the home section, about me section, projects, and the contact me page.*/
 
 // State will be used to deal with the visibility of the navigation bar and logo
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // shadcn navigation menu imports
 import {
@@ -12,20 +12,20 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 
-// This is a logo placeholder
-import logo from "/vite.svg";
+// Logo import
+import logo from "/logo.png"
 
-function Navigation() {
+function Navigation({ screenWidth }) {
   // Visibility state for dealing for the background color of the menu
   const [navBarVisibility, setNavBarVisibility] = useState(true);
-  const [logoVisibility, setLogoVisibility] = useState("visible");
 
-  // UseEffect is used here to make the logo invisible if the screen is already 360px wide
-  useEffect(() => {
-    if (window.innerWidth <= 360) {
-      setLogoVisibility("invisible");
-    }
-  }, [])
+  // This variable is used to make the logo invisible on smaller screens
+  let logoVisibility = "visible";
+
+  // Make logo invisible if the screen width is under 430
+  if (screenWidth < 430) {
+    logoVisibility = "invisible";
+  }
 
   /* The bgColor variable only has a background color if
   navBarVisibility is false*/
@@ -43,17 +43,6 @@ function Navigation() {
     }
   };
 
-  /* This is used to fix an issue where the logo would portrude onto the menu items at screens with
-  a width lower than 361 pixels. The logo's visibility is now set to invisible if the width of the screen
-  is equal to or lower than 360. */
-  window.onresize = function () {
-    if (window.innerWidth <= 360) {
-      setLogoVisibility("invisible");
-    } else {
-      setLogoVisibility("visible");
-    }
-  }
-
   /* The JSX component returned needed to use CSS flex to adjust to screen sizes easily. The justify-end
   div is used to display the logo while every other menu items is using justify-start. REMOVE MAX-WIDTH, xl:left-auto for the nav tag
   and set w-screen for the logo div to return to the previous settings */
@@ -62,11 +51,11 @@ function Navigation() {
       {/*The div below is just for creating the blurry background to the navigation bar */}
       <div className={`fixed top-0 left-0 w-screen z-30 h-15 ${bgColor}`} />
       <nav
-        className={`fixed top-0 left-0 xl:left-auto w-full flex justify-start h-15 items-center z-31 max-w-[1220px]`}
+        className={`fixed top-0 left-0 xl:left-auto w-full flex ${logoVisibility == "invisible" ? "justify-center" : "justify-start"} h-15 items-center z-31 max-w-[1220px]`}
       >
         <div className={`flex justify-end flex-row w-full absolute right-5 ${logoVisibility}`}>
           <a href="#top">
-            <img src={logo} />
+            <img src={logo} width={70} />
           </a>
         </div>
         <NavigationMenu>
