@@ -9,7 +9,7 @@ The portfolio's design is based on space and solar systems. It is meant to look 
 The website can be accessed at https://gadcooper.dev/ . Feel free to look around. Fill out the form on the website to get in touch with me if you are interested. You can also shoot me an email using the links at the footer of the portfolio.
 
 ## Differences from Original
-The original portfolio relied on using minimalistic animations to create a website that looked static most of the times. The revised portfolio utilizes Motion for React to a greater extent. It looks more modern than the original portfolio, and it utilizes animations often to create a unique, lively experience.
+The original portfolio relied on using minimalistic animations to create a website that looked static most of the time. The revised portfolio utilizes Motion for React to a greater extent. It looks more modern than the original portfolio, and it utilizes animations often to create a unique, lively experience.
 
 Due to its increased front-end complexity, this new portfolio also had to be carefully curated to different screen sizes. This makes it more dynamic, and its structure can change significantly from one screen size to another.
 
