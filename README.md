@@ -1,5 +1,5 @@
 # Revised Portfolio
-![An image of the website is displayed here.](/readme_image "This is an image of the website.")
+![An image of the website is displayed here.](/readme_image.png "This is an image of the website.")
 
 Revised Portfolio is an updated version of my personal portfolio website, built with ReactJS. It uses React Router to handle navigation and display custom error pages for inactive URLs. Smooth animations are created using Framer Motion, while the design is styled with Tailwind CSS and enhanced with custom vanilla CSS elements.
 
