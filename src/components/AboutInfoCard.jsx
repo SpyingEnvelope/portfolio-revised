@@ -11,7 +11,7 @@ PROPS:
 delay: NUMBER used to state how many seconds of delay should exist before the planet animation starts.
 right: BOOLEAN used to decide what type of animation to play when the card enters the viewport.
 mobileSize: STRING used to size the card dynamically on mobile screens
-children: What to display in the infor card itself */
+children: What to display in the info card itself */
 function AboutInfoCard({ delay, right, mobileSize, children }) {
   return (
     <motion.div

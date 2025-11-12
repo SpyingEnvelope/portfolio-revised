@@ -1,4 +1,4 @@
-/* This component generates the backgroudn stars seen in the banner .*/
+/* This component generates the background stars seen in the banner .*/
 
 import { motion } from "motion/react";
 import Star from "./Star";
