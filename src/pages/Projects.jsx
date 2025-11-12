@@ -14,7 +14,7 @@ import { PiCheckerboardDuotone } from "react-icons/pi";
   para: STRING what is written inside of the card
   image: REACT IMAGE IMPORT the image used to display. Displays if icon does not exist 
   icon: REACTNODE the icon to display if an image is not used
-  links: ARRAY OF OBJECTS each object in the array has five to six properties: href and text.
+  links: ARRAY OF OBJECTS each object in the array has two properties: href and text.
          href: STRING the url to go to when clicking the link/anchor tag
          text: STRING the text to write inside the anchor tag
   dimensions: STRING the classname for the dimensions to use for the image. OPTIONAL
