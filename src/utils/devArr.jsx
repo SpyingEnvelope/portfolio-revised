@@ -19,6 +19,8 @@ import { NumpyOriginal } from "devicons-react";
 import { TailwindcssOriginal } from "devicons-react";
 import { TensorflowOriginal } from "devicons-react";
 import { NodejsOriginal } from "devicons-react";
+import { FastapiOriginal } from "devicons-react";
+import { PostgresqlOriginal } from "devicons-react";
 
 // A constant to set the size of the icons
 const iconSize = "2em";
@@ -36,11 +38,13 @@ const devArr = [
   { name: "MySQL", icon: <MysqlOriginal size={iconSize} /> },
   { name: "MongoDB", icon: <MongodbOriginal size={iconSize} /> },
   { name: "SQLite", icon: <SqliteOriginal size={iconSize} /> },
+  { name: "Postgres", icon: <PostgresqlOriginal size={iconSize} /> },
   { name: "React", icon: <ReactOriginal size={iconSize} /> },
   { name: "Git", icon: <GitOriginal size={iconSize} /> },
   { name: "Tailwind", icon: <TailwindcssOriginal size={iconSize} /> },
   { name: "Bootstrap", icon: <BootstrapOriginal size={iconSize} /> },
   { name: "Express", icon: <SiExpress size={iconSize} /> },
+  { name: "FastAPI", icon: <FastapiOriginal size={iconSize} /> },
   { name: "Node.js", icon: <NodejsOriginal size={iconSize} /> },
   { name: "TensorFlow", icon: <TensorflowOriginal size={iconSize} /> },
   { name: "Pandas", icon: <PandasOriginal size={iconSize} /> },
