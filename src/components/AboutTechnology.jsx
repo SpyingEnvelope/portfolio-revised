@@ -25,11 +25,13 @@ import { SiTensorflow } from "react-icons/si";
 import { DiJqueryLogo } from "react-icons/di";
 import { SiPandas } from "react-icons/si";
 import { SiMongoose } from "react-icons/si";
+import { SiFastapi } from "react-icons/si";
 
 // Database imports
 import { DiMongodb } from "react-icons/di";
 import { TbBrandMysql } from "react-icons/tb";
 import { SiSqlite } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 // Tools imports
 import { FcLinux } from "react-icons/fc";
@@ -50,6 +52,7 @@ const frameIcons = [
   { icon: <DiJqueryLogo />, name: "jQuery", color: "text-stone-300" },
   { icon: <SiPandas />, name: "Pandas", color: "text-[#1a0e59]" },
   { icon: <SiMongoose />, name: "Mongoose", color: "text-[#b21d23]" },
+  { icon: <SiFastapi />, name: "FastAPI", color: "text-[#009486]" },
 ];
 
 // Databases array
@@ -57,6 +60,7 @@ const dbIcons = [
   { icon: <DiMongodb />, name: "MongoDB", color: "text-[#199554]" },
   { icon: <TbBrandMysql />, name: "MySQL", color: "text-[#08658d]" },
   { icon: <SiSqlite />, name: "SQLite", color: "text-[#08425d]" },
+  { icon: <BiLogoPostgresql />, name: "Postgres", color: "text-[#326691]"},
 ];
 
 // Languages array

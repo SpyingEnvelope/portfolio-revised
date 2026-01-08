@@ -20,7 +20,7 @@ function SocialMedia() {
           <MdEmail />
         </a>
       </div>
-      <p className="text-xs mt-2">&#169; 2025 Gad Cooper. All Rights Reserved.</p> 
+      <p className="text-xs mt-2">&#169; 2026 Gad Cooper. All Rights Reserved.</p> 
     </div>
   );
 }
